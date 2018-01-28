@@ -1,0 +1,3592 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>OIS12</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Highlight js -->
+    <link rel="stylesheet" href="../support/html/highlightjs/styles/default.css">
+    <link rel="stylesheet" href="../support/html/css/highlight-commands.css">
+    <script src="../support/html/highlightjs/highlight.pack.js"></script>
+    <script src="../support/html/js/highlight-commands.js"></script>
+
+    <!-- Bootstrap -->
+    <link href="../support/html/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../support/html/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link href="../support/html/css/square-braket-associates.css" rel="stylesheet">
+    <style>
+/*        .container { max-width: 55em; } */
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <div class="container text-justify">
+      <section>
+        <h1>OIS12</h1>
+        <div class="attribution">FHICT software docenten, met name Inge van Engeland, Marcel Veldhuijzen, Jan Oonk, Peter Lambooij, Björn Hamels, Mark Mestrom, </div>
+
+        <section>
+<h1>1. Course OIS12</h1>
+<p>
+Dit document is nog in ontwikkeling: het kan zijn dat hier of daar nog wat ontbreekt! De volledige inhoud van het vak staat ook op Canvas.
+</p>
+
+<section>
+<h2>1.1. OIS12 Home</h2>
+
+<section>
+<h3>1.1.1. Wat wil jij programmeren?</h3>
+<p>
+OIS12 bereidt je voor op semester 2 van ICT en Technology en ICT en Software Engineering. Aan het eind van OIS12 kun je bruikbare onderhoudbare programma's schrijven in C#.
+</p>
+<section>
+<h3>0.0.1. Boek</h3>
+<p>
+We gebruiken geen boek bij OIS12. Als je het fijn vindt om toch met behulp van een boek te studeren dan raden we het boek Handboek Visual C# 2012 aan door Dirk Louis. Dit boek is tevens handig voor het vak FUN12.
+</p>
+<p>
+Een ander goed boek waarin je goed de leerdoelen van OIS12 kunt vinden en kunt leren a.d.h.v. theorie en opdrachten is:
+Programmeren in C# door Douglas Bell en Mike Parr (Nederlandstalig) van uitgeverij Pearson.
+</p>
+</section><section>
+<h3>0.0.2. Leeractiviteiten</h3>
+<p>
+Je krijgt periodiek feedback van je docent die wordt genoteerd in Canvas. Bekijk zelf aan de hand van deze feedback welke programmeer-oefeningen je gaat maken. Bij OIS12 ga je zo veel mogelijk zelf aan de slag met programmeren. Door veel te oefenen krijg je het vak snel onder de knie.
+</p>
+
+</section><section>
+<h3>0.0.3. Beoordeling</h3>
+<p>
+Je eindcijfer wordt bepaald door de teksten van de feedback die je gedurende de lesweken hebt ontvangen. Alle leerdoelen aangetoond? Dan heb je zeker een voldoende voor OIS12. Wil je graag een 9 of 10 halen voor OIS12? Maak een afspraak met je docent hoe je dat kunt aanpakken.
+</p>
+</section><section>
+<h3>0.0.4. Blokboek/studentenhandleiding</h3>
+<p>
+Zie intranet-portal
+</p>
+
+<p>
+Wij wensen je een fijne en leerzame cursus.
+
+</p></section>
+</section></section><section>
+<h2>1.2. Leerdoelen OIS12</h2>
+<a id="cha:ois12learninggoals"></a>
+
+<p>
+Deze leerdoelen komen uit de vakkengids voor het startsemester. Globale doel is dat je alle onderstaande leerdoelen afzonderlijk en gezamenlijk kunt toepassen in een C#-programma dat je schrijft aan de hand van een functionele specificatie. Let op: je moet dit alles uit jezelf kunnen programmeren, alleen code kunnen uitleggen is niet voldoende!
+</p>
+<section>
+<h3>0.0.1. Leerdoelen VOORSTEL OIS12 cohort201802</h3>
+
+<p>
+Dit zijn de minimale leerdoelen om tot een voldoende indicatie te komen voor het vakgebied.
+</p>
+
+<p>
+<em>We beginnen met de centrale technische leerdoelen van OIS12.</em>
+</p>
+<section>
+<h4>0.0.1.1. constructor</h4>
+<p>
+Je kunt in C# vanuit een specificatie constructors programmeren en deze gebruiken.
+</p>
+<p>
+Bij FUN12 krijg je geleerd hoe je met <code>classes</code> moet werken,
+OIS12 voegt hier aan toe dat je <code>constructors</code> gebruikt om <code>instanties</code>
+van een <code>class</code> te maken.
+</p>
+
+</section><section>
+<h4>0.0.1.2. private/public</h4>
+<p>
+Je weet wat <code>private</code> en <code>public</code> betekenen
+en maakt <code>fields</code> in een <code>class</code> altijd <code>private</code>.
+</p>
+<p>
+Als van buiten een <code>object</code> de waarde van een <code>field</code> moet wijzigen
+gaat dit middels hiertoe bestemde <code>methods</code> of <code>properties</code>.
+Dit is niet iets wat je 1 keer laat zien maar wat je vanaf dat moment
+in AL je programma's doet! (dus ook bij FUN12!)
+</p>
+
+</section><section>
+<h4>0.0.1.3. overloading</h4>
+<p>
+Je kunt methodes programmeren met dezelfde naam binnen 1 class
+en je kunt uitleggen wat method overloading betekent.
+</p>
+<p>
+We gebruiken dit bij OIS12 veel voor constructors
+(waarbij dit ook kan, net als bij `gewone' methodes).
+</p>
+
+</section><section>
+<h4>0.0.1.4. property</h4>
+<p>
+Je snapt wat een <code>property</code> is (zowel <em>normaal</em> als <em>auto property</em>)
+en hebt laten zien dat je ze zelf kunt aanmaken.
+</p>
+<p>
+Het snappen wat een property is is het belangrijkste
+aangezien veel voorbeelden op internet met <code>properties</code> werken:
+Mensen die bijvoorbeeld al <code>java</code>kennis hebben en
+(ná aantonen dat ze snappen wat een <code>property</code> is)
+voorkeur hebben voor <code>Get</code> en <code>Set methods</code> mogen dat ook.
+</p>
+
+</section><section>
+<h4>0.0.1.5. List en foreach</h4>
+<p>
+Je kunt programmeren met foreach en lijsten van objecten.
+</p>
+<p>
+Met een lijst wordt hier bedoeld een <code>List&lt;T&gt;</code> waarbij T
+een geldig <code>type</code> is, bijvoorbeeld een zelf geprogrammeerde <code>class</code>.
+</p>
+
+</section><section>
+<h4>0.0.1.6. Van relation tussen classes naar een List</h4>
+<p>
+Je kunt vanuit een gegeven klassendiagram
+relaties in C# programmeren waarbij je gebruik maakt van Lists (lijsten van objecten).
+</p>
+<p>
+Als een <code>object</code> meerdere <code>objecten</code> van een <code>type</code> <code>T</code> bevat wordt dit
+gerealiseerd door eerstgenoemd <code>object</code> een <code>Field</code> te geven
+van het type <code>List&lt;T&gt;</code>.
+</p>
+
+</section><section>
+<h4>0.0.1.7. enum</h4>
+<p>
+Je kunt <code>enums</code> programmeren.
+</p>
+<p>
+Dit wil zeggen dat je weet hoe je dit doet, een keer een goed voorbeeld
+hebt laten zien aan de docoent. Verder hou je je ogen open
+tijdens het ontwikkelen: <em>als</em> je een situatie tegen komt die
+roept om een <code>enum</code> gebruik je die.
+Enums kunnen een belangrijk wapen zijn om je code leesbaar en
+onderhoudbaar te houden.
+</p>
+
+
+<p>
+<em>Nu een aantal leerdoelen waarbij je mag laten zien dat je een
+professional in wording bent.</em>
+</p>
+</section><section>
+<h4>0.0.1.8. Professionele houding</h4>
+<p>
+Je stelt je professioneel op.
+Dit blijkt ondermeer uit je aanwezigheid, actieve deelname tijdens de lessen,
+opbouwend kritische houding, samenwerken met anderen en het houden aan afspraken.
+</p>
+<p>
+Als je er een keer tijdens lestijden niet bent,
+pas later aanwezig kunt zijn of eerder weg gaat
+communiceer je dit naar de docent.
+Ook als de les langer duurt dan jij
+zonder roken, gamen of facebook kunt
+en je dus naar buiten gaat (roken) of naar een open ruimte (gamen/facebook):
+dat meld je even bij de docent.
+</p>
+
+</section><section>
+<h4>0.0.1.9. Visual Studio</h4>
+<p>
+Je kunt je eigen Visual Studio-installatie onderhouden.
+</p>
+<p>
+Ook dit leerdoel gaat in belangrijke mate over professionaliteit:
+Zorg dat je je laptop in orde hebt, met visual studio werkend.
+Natuurlijk kunnen er wel eens problemen zijn,
+maar je zorgt dat je een backup hebt zodat je geen weken werk kwijt bent.
+Als je laptop of Visual Studio niet orde zijn weet je binnen afzienbare tijd
+te regelen dat je toch aan het vak kunt werken.
+</p>
+
+</section><section>
+<h4>0.0.1.10. Analyse</h4>
+<p>
+Je kunt een analysedocument schrijven waarbij je
+voorafgaand aan een project een gepriotiriseerde opsomming
+geeft van functionele eisen aan een applicatie.
+</p>
+<p>
+Natuurlijk kan van een startemesterstudent nog geen volledig analysedocument
+verwacht worden. Wat we echter wel verwachten is dat je
+requirements verwoordt en hier een MoSCoW-indeling van maakt
+op een manier die laat zien dat je de klant serieus neemt.
+Dat wil zeggen dat je aandacht en liefde erin stopt:
+Verzorgde layout en geen taalfouten.
+Tot slot verwerk je eventuele feedback op documenten.
+</p>
+
+</section><section>
+<h4>0.0.1.11. Technical design</h4>
+<p>
+Je bent in staat om vooraf te ontwerpen uit welke klassen
+je applicatie bestaat, en wat de eigenschappen, methoden
+en verantwoordelijkheden van die klassen zijn,
+de relaties tussen deze classes en dit alles op een grafische manier weer te geven.
+</p>
+<p>
+Het gaat er niet om dat je (bijvoorbeeld) <code>UML</code> ('Unified Modeling Language')
+volgens alle regels kunt toepassen: het gaat er om dat je
+voordat je gaat coderen op een (enigszins abstracte) manier over een programma
+kunt praten en hier een grafische weergave kunt maken.
+Je zult ook hier mogelijk feedback op krijgen waar je iets mee zult moeten doen.
+</p>
+
+</section><section>
+<h4>0.0.1.12. UI separation</h4>
+<p>
+Je bent in staat om kleine applicaties te programmeren waarbij er
+een goede scheiding is tussen code in klassen en userinterface-code.
+</p>
+<p>
+Met de kennis en vaardigheden die je nu hebt is deze scheiding nog niet
+altijd mogelijk maar we streven dit zoveel als mogelijk wel na.
+</p>
+
+<p>
+<em>De nu volgende leerdoelen zitten in dit vak omdat je ze
+logischerwijs bij een ander leerdoel tegenkomt
+(collateral).</em>
+</p>
+</section><section>
+<h4>0.0.1.13. FileHandling</h4>
+<p>
+Je moet vanuit een specificatie een C#-programma kunnen schrijven
+waarmee tekstbestanden kunnen worden ingelezen en worden geschreven.
+</p>
+
+</section><section>
+<h4>0.0.1.14. Exception</h4>
+<p>
+Je kunt op een correcte manier excepties in je C#-programma afhandelen.
+</p>
+<p>
+Wat exceptions betreft gaat hier om het gebruik van de <code>try..catch</code>
+op momenten dat dit van toepassing is.
+Net zo belangrijk is dat je het <em>alleen dan</em> gebruikt!
+</p>
+
+</section><section>
+<h4>0.0.1.15. graphics</h4>
+<p>
+Je kunt vanuit een specificatie een programma schrijven
+dat werkt met de diverse functies van de Windows GDI (graphics).
+</p>
+
+
+</section><section>
+<h4>0.0.1.16. static</h4>
+<p>
+Je kunt gebruik maken van bestaande methoden die static zijn
+en je kunt uitleggen wat het static keyword betekent.
+</p>
+
+</section><section>
+<h4>0.0.1.17. casting</h4>
+<p>
+Je weet wat een <code>cast</code> is en kunt <code>casting</code> toepassen in het geval een <code>GUI-control</code>
+verwijst naar een of meerdere <code>objecten</code> van een bepaald type.
+</p>
+<p>
+Hét voorbeeld hiervan binnen OIS12 is dat je een <code>object</code> uit een <code>ListBox</code>
+haalt waarvan je zeker weet dat het van een specifieke <code>class</code> als <code>type</code> heeft:
+Als je een element uit de <code>Items</code> haalt kun je de waarde <code>casten</code> naar
+het juiste <code>type</code>.
+</p>
+<p>
+Verder weet je dat <code>cast</code> inherent <em>onveilig</em> is
+(zeker in sommige programmeertalen) en dus niet onnodig gedaan moet worden.
+</p>
+
+</section><section>
+<h4>0.0.1.18. Value versus Reference Types</h4>
+<p>
+Je kunt het verschil tussen value en reference types uitleggen en er mee programmeren.
+</p>
+<p>
+Dit is niet een leerdoel dat je expliciet moet aantonen.
+</p>
+
+
+</section><section>
+<h4>0.0.1.19. XAML</h4>
+<p>
+Je kunt user interfaces voor applicaties maken
+met zowel de Windows Forms designer als met de XAML designer.
+</p>
+
+
+</section></section><section>
+<h3>0.0.2. Leerdoelen OIS12 cohort201708</h3>
+
+<section>
+<h4>0.0.2.1. visual studio</h4>
+<p>
+Je kunt je eigen Visual Studio-installatie onderhouden.
+In feite gaat dit leerdoel over professionaliteit: Zorg dat je je laptop in orde hebt, met visual studio draaiend. Natuurlijk kunnen er wel eens problemen zijn, maar je zorgt dat je een backup hebt zodat je geen weken werk kwijt bent. Als je laptop of visual studio niet orde zijn weet je binnen korte tijd te regelen dat je toch aan het vak kunt werken.
+</p>
+
+
+</section><section>
+<h4>0.0.2.2. analyse</h4>
+<p>
+Je kunt een analysedocument schrijven waarbij je voorafgaand aan een project een gepriotiriseerde opsomming geeft van functionele eisen aan een applicatie.
+</p>
+
+
+
+</section><section>
+<h4>0.0.2.3. filehandling</h4>
+<p>
+Je moet vanuit een specificatie een C#-programma kunnen schrijven waarmee tekstbestanden kunnen worden ingelezen en worden geschreven.
+</p>
+
+
+</section><section>
+<h4>0.0.2.4. exception</h4>
+<p>
+Je moet op een correcte manier excepties in je C#-programma kunnen afhandelen.
+</p>
+
+</section><section>
+<h4>0.0.2.5. UML design</h4>
+<p>
+Je bent in staat om vooraf te documenteren uit welke klassen je applicatie bestaat, en wat de eigenschappen, methoden en verantwoordelijkheden van die klassen zijn en deze grafisch in UML weer te geven.
+</p>
+
+</section><section>
+<h4>0.0.2.6. associaties</h4>
+<p>
+Je kunt associaties (relaties) met multipliciteiten tussen klassen ontwerpen en deze weergeven in een UML-klassendiagram.
+</p>
+
+</section><section>
+<h4>0.0.2.7. constructor</h4>
+<p>
+Je kunt in C# vanuit een specificatie constructoren programmeren en deze gebruiken.
+</p>
+
+</section><section>
+<h4>0.0.2.8. overloading</h4>
+<p>
+Je kunt in C# binnen een klasse methoden programmeren met dezelfde naam en je kunt uitleggen wat method overloading betekent.
+</p>
+
+</section><section>
+<h4>0.0.2.9. private/public</h4>
+<p>
+Je kunt programmeren met private en public.
+</p>
+
+</section><section>
+<h4>0.0.2.10. property</h4>
+<p>
+Je kunt property's programmeren vanuit een gegeven specificatie.
+</p>
+
+</section><section>
+<h4>0.0.2.11. enum</h4>
+<p>
+Je kunt enum's programmeren.
+</p>
+
+</section><section>
+<h4>0.0.2.12. graphics</h4>
+<p>
+Je kunt vanuit een specificatie een programma schrijven dat werkt met de diverse functies van de Windows GDI (graphics).
+</p>
+
+</section><section>
+<h4>0.0.2.13. static</h4>
+<p>
+Je kunt gebruik maken van bestaande methoden die static zijn en je kunt uitleggen wat het static keyword betekent.
+</p>
+
+</section><section>
+<h4>0.0.2.14. casting</h4>
+<p>
+Je kunt programmeren met casting in de context van het casten van een object naar het gewenste subtype.
+</p>
+
+</section><section>
+<h4>0.0.2.15. List en foreach</h4>
+<p>
+Je kunt programmeren met foreach en lijsten van objecten.
+</p>
+
+</section><section>
+<h4>0.0.2.16. professionele houding</h4>
+<p>
+Je stelt je professioneel op. Dit blijkt ondermeer uit je aanwezigheid, actieve deelname tijdens de lessen, een kritische houding en samenwerken met anderen.
+</p>
+
+</section><section>
+<h4>0.0.2.17. Van UML relation naar List</h4>
+<p>
+Je kunt vanuit een gegeven UML-klassendiagram relaties in C# programmeren waarbij je gebruik maakt van List's (lijsten van objecten).
+</p>
+
+</section><section>
+<h4>0.0.2.18. Value versus Reference Types</h4>
+<p>
+Je kunt het verschil tussen value en reference types uitleggen en er mee programmeren.
+</p>
+
+</section><section>
+<h4>0.0.2.19. UI separation</h4>
+<p>
+Je bent in staat om kleine applicaties te programmeren waarbij er een goede scheiding is tussen code in klassen en userinterface-code.
+</p>
+
+</section><section>
+<h4>0.0.2.20. XAML</h4>
+<p>
+Je kunt user interfaces voor applicaties maken met zowel de Windows Forms designer als met de XAML designer.
+
+</p></section></section>
+<section>
+<h3>1.2.1. Proftaak PT12</h3>
+<p>
+Vanuit de proftaak PT12 vragen de studenten twee maal (1x rond week 3 en 1x rond week 7) mondeling feedback aan de OIS12-vakdocent (het initiatief ligt bij de studenten). Die feedback wordt door de docent mondeling gegeven, de studenten noteren die feedback en leveren die in in hun PT12-course. Bij de afronding van PT12 wordt ook beoordeeld wat de studenten met die feedback hebben gedaan.
+</p>
+<p>
+Als docent wil je graag een <code>class diagram</code> zien van het project. Let hierbij op dat het ook daadwerkelijk een <code>class diagram</code> (UML-ish notatie) is en geen <code>database model</code>. Bespreek het model met het team. Na dit gesprek kan de docent kijken of het leerdoel over het modelleren aangetoond is (wellicht 'once'?).
+
+</p>
+</section><section>
+<h3>1.2.2. De relatie met FUN12</h3>
+<p>
+Deze paragraaf gaat over de relatie met FUN12 en dus wat bekend wordt verondersteld bij OIS12.
+</p>
+<p>
+FUN12 is ontstaan doordat een deel van het oude vak SE12 (grofweg programmeren met <code>classes</code>, <code>constructors</code>, <code>objecten</code>) is samengevoegd met een deel van het oude vak DBS12 over de beginselen van <code>relationele databases</code> en <code>SQL</code>. De rest van SE12 is hernoemd naar OIS12, hoewel deze rest niet zonder <code>classes</code>, <code>constructors</code> en <code>objecten</code> kan). Vandaar dat er een overlap zit tussen OIS12 en FUN12. Aangezien deze onderwerpen bij het maken van Software zo belangrijk zijn is dit ook helemaal niet erg.
+
+</p>
+
+
+
+</section></section></section><section>
+<h1>2. Course: PAC, Pre Assessment Course</h1>
+
+<section>
+<h3>2.0.1. Wat is de Pre Assessment Course?</h3>
+<p>
+De Pre Assessment Course is een zelfstudiecursus die studenten doen in het kader van de MVV.
+</p>
+<p>
+Een goed boek waaruit je kunt leren programmeren en kunt leren aan de hand van theorie en opdrachten is:
+<strong>Programmeren in C#</strong> door <em>Douglas Bell en Mike Parr</em> (Nederlandstalig) van uitgeverij Pearson.
+</p>
+<section>
+<h3>0.0.1. Leeractiviteiten</h3>
+<p>
+Dit is een zelfstudiecursus. De student leert programmeren en oefent hiermee.
+</p>
+
+</section><section>
+<h3>0.0.2. Beoordeling</h3>
+<p>
+Aan het eind vindt er een assessment plaats waarin de student het gemaakte werk toont en de assessoren bepalen of de student het verkorte traject in mag.
+</p>
+</section><section>
+<h3>0.0.3. Blokboek/studentenhandleiding</h3>
+<p>
+Zie intranet-portal
+</p>
+
+
+</section><section>
+<h3>0.0.4. Leerdoelen Pre Assessment S-profiel voor master TU/e</h3>
+<p class="todo">Verdeling van leerdoelen over Coen (C) en Nico (N): C: 10 t/m 18; N: 4 t/m 9 en 19 t/m 22</p><p>
+	 
+</p>
+<section>
+<h4>0.0.4.1. Oriëntatie op de ICT-context</h4>
+<p>
+1.	De student kan uitleggen wat voor soort werkzaamheden een HBO ICT bachelor - afhankelijk van het verkozen profiel - uitvoert.  Een profiel is een combinatie van ICT met één van de volgende vier invalshoeken: Business (B), Media Design (M), Software Engineering (S) en Technology (T).
+</p>
+<p>
+2.	De student kan motiveren waarom het S-profiel de voorkeur heeft.
+</p><p>
+3.	De student kan uitleggen wat voor soort werkzaamheden de software engineer uitvoert tijdens analyse, ontwerp, realisatie, testen en beheer.
+</p>
+
+</section><section>
+<h4>0.0.4.2. Basis programmeren</h4>
+<p>
+4.	De student kan progammacode schrijven waarbij er aandacht is voor onderhoudbaarheid in de vorm van: documentatie van programmacode, het kiezen van betekenisvolle namen van variabelen/methoden en het voldoen aan afgesproken naamsconventies.
+</p>
+<p>
+5.	De student kan keuzestructuren (if), herhaalstructuren (for, while) en methoden programmeren.
+</p>
+<p>
+6.	De student kan gebruikmaken van een debugger met breakpoints, inspectievensters, 'step into' en 'step over'.
+</p>
+<p>
+7.	De student kan eigenschappen van GUI-objecten zowel visueel als in programmacode aanpassen.
+</p>
+<p>
+8.	De student kan zelfstandig zoeken naar nuttige eigenschappen/events van GUI-objecten.
+</p>
+
+</section><section>
+<h4>0.0.4.3. Programmeren met objecten</h4>
+<p>
+9.	De student weet wat de scope van een variabele is.
+</p>
+<p>
+10.	De student kan gebruikmaken van bestaande methoden die static zijn en kan uitleggen wat het static keyword betekent.
+</p>
+<p>
+11.	De student kan collecties, en in het bijzonder arrays en lijsten, toepassen.
+</p>
+<p>
+12.	De student kan een foreach-herhaalstructuur (C#) voor een collectie programmeren.
+</p>
+<p>
+13.	De student kan gegevens naar een tekstbestand schrijven en gegevens vanuit een tekstbestand inlezen.
+</p>
+<p>
+14.	De student kan excepties in programmacode afhandelen.
+</p>
+
+</section><section>
+<h4>0.0.4.4. Ontwerp van klassen</h4>
+<p>
+15.	De student kan uitleggen wat klassen zijn en kan een zelf gedefinieerde klasse met constructor(en), eigenschappen (C#) en methoden programmeren.
+</p>
+<p>
+16.	De student kan associaties (met multipliciteit) tussen klassen ontwerpen, in de vorm van een UML-klassendiagram.
+</p>
+<p>
+17.	De student weet wanneer de private en public keywords moeten worden gebruikt.
+</p>
+<p>
+18.	De student kan kleine applicaties programmeren waarbij er een goede scheiding is tussen programmacode in zelf gedefinieerde klassen en programmacode ten behoeve van de GUI.
+</p>
+
+</section><section>
+<h4>0.0.4.5. Structured Query Language (SQL)</h4>
+<p>
+19.	De student kan informatie opvragen uit een relationele database. De student kan hierbij de volgende SQL-concepten toepassen: (sub)query, select, insert, delete, inner join, group by en standaardfuncties.
+</p><ul>
+<li>Eenvoudige query met sleutelwoorden SELECT, FROM, WHERE en toepassing van de sleutelwoorden AND, OR, NULL, BETWEEN, IN EN LIKE.</li>
+<li>Toepassing van de 5 basisfuncties MIN, MAX, COUNT, AVG, SUM.</li>
+<li>Toepassing van subqueries.</li>
+<li>Toepassing van inner join.</li>
+<li>Toepassing van group by.</li>
+</ul>
+
+
+
+</section><section>
+<h4>0.0.4.6. Databases</h4>
+<p>
+20.	De student kan een Entity Relationship Diagram (ERD) ontwerpen met ten minste drie gerelateerde entiteiten.
+</p>
+<p>
+21.	De student kan vanuit een gegeven ERD, inclusief een veel-op-veel relatie, een relationele database met primary en foreign keys definiëren.
+</p>
+<p>
+22.	De student kan met behulp van de Structured Query Language (SQL) informatie toevoegen aan (INSERT) en verwijderen uit (DELETE) een relationele database.
+</p>
+<p>
+23.	De student kan een relationele database integreren binnen een applicatie.
+
+</p></section></section>
+
+
+
+
+</section></section><section>
+<h1>3. Algemene info</h1>
+
+
+<section>
+<h2>3.1. CodingGuidelines</h2>
+<a id="cha:challengeCodingGuidelines"></a>
+
+<p>
+In elke programmeertaal zijn er afspraken over hoe code er uit ziet. Veel teams maken hier extra afspraken over.
+</p>
+
+<ol><li>Belangrijkste regel: <em>Leesbaarheid</em> en Onderhoudbaarheid van de code staan voorop! Op elke andere regel kan wel een uitzondering verzonnen worden, een geval waarin het leesbaardere of onderhoudbaardere code oplevert als je er vanaf wijkt. Anderzijds is het sowieso eerst de <em>Reeglen der Kunst</em> eerst goed te leren voor je er van af wijkt!</li>
+<li>De naam van een <code>Class</code> wordt met een hoofdletter geschreven. Een <code>Class name</code> is normaal in het <em>enkelvoud</em>.</li>
+<li>De naam van een <code>Methode</code> wordt in C# met een hoofdletter geschreven. Sommige teams maken afspraken over de volgorde van de <code>Fields</code>, <code>Constructors</code>, <code>Methods</code> binnen een <code>Class</code>, maar aangezien je in Visual Studio met <code>F12</code> naar de declaratie van een <code>Method</code>, <code>Constructor</code> of <code>Variable</code> kunt springen maakt het niet uit.</li>
+<li>De naam van een <code>locale variabele</code> wordt met een kleine letter geschreven.</li>
+<li>De naam van een <code>Property</code> wordt in C# met een hoofdletter geschreven.</li>
+<li>Gebruik een duidelijke inspringing. Hoe je de accolades en spaties en tabs zet kan op verschillende manieren: de precieze manier kan van team tot team verschillen en veel editors kunnen dit voor je doen. Als je het handmatig doet, doe het dan wel altijd op dezelfde manier.</li>
+<li>Wen je aan alles meteen een goede naam te geven.</li>
+</ol>
+
+
+</section><section>
+<h2>3.2. External Resources</h2>
+<a id="cha:infoExternalResources"></a>
+<p>
+Enkele alternatieve bronnen:
+</p>
+<section>
+<h4>0.0.0.1. Het youtube-kanaal van FHICT-docent Wilrik</h4>
+<p>
+<a href="https://www.youtube.com/watch?v=IuStUzWuPrw">YouTube Wilrik</a>
+</p>
+</section><section>
+<h4>0.0.0.2. Brackeys</h4>
+<p>
+<a href="https://www.youtube.com/watch?v=pSiIHe2uZ2w&list=PLPV2KyIb3jR6ZkG8gZwJYSjnXxmfPAl51">Brackeys</a>
+</p>
+</section><section>
+<h4>0.0.0.3. The New Boston</h4>
+<p>
+Je kunt ook kijken naar
+<a href="https://thenewboston.com/videos.php?cat=15">De video-tutorials van The New Boston</a>
+</p><p>
+Hier de indeling:
+</p><table style="border: solid thin"><tr><td style="text-align: left">1</td>
+<td style="text-align: right">Visual Studio installeren Week 1</td>
+</tr>
+<tr><td style="text-align: left">2</td>
+<td style="text-align: right">Form properties Week 2</td>
+</tr>
+<tr><td style="text-align: left">3</td>
+<td style="text-align: right">MessageBox	ois11 Week 1</td>
+</tr>
+<tr><td style="text-align: left">4</td>
+<td style="text-align: right">Variabelen  ois11	Week 2</td>
+</tr>
+<tr><td style="text-align: left">5</td>
+<td style="text-align: right">Form properties in C# aanpassen  ois11	Week 2</td>
+</tr>
+<tr><td style="text-align: left">6</td>
+<td style="text-align: right">If-statement  ois11	Week 3</td>
+</tr>
+<tr><td style="text-align: left">7</td>
+<td style="text-align: right">If-statement  ois11	Week 3</td>
+</tr>
+<tr><td style="text-align: left">8</td>
+<td style="text-align: right">If-statement  ois11	Week 3</td>
+</tr>
+<tr><td style="text-align: left">9</td>
+<td style="text-align: right">Switch ois11</td>
+</tr>
+<tr><td style="text-align: left">10</td>
+<td style="text-align: right">Rekenen in C# ois11	Week 2</td>
+</tr>
+<tr><td style="text-align: left">11</td>
+<td style="text-align: right">Array’s fun12	Week 3</td>
+</tr>
+<tr><td style="text-align: left">12</td>
+<td style="text-align: right">Lists fun12	Week 4</td>
+</tr>
+<tr><td style="text-align: left">13</td>
+<td style="text-align: right">For en foreach ois11-wk4  (for)</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: right">fun12-Week 5 (foreach)</td>
+</tr>
+<tr><td style="text-align: left">14</td>
+<td style="text-align: right">Do en do-while ois11-Week 4 (extra)</td>
+</tr>
+<tr><td style="text-align: left">15</td>
+<td style="text-align: right">Try catch Leerdoel ois12</td>
+</tr>
+<tr><td style="text-align: left">16</td>
+<td style="text-align: right">Methodes ois11-Week 6</td>
+</tr>
+<tr><td style="text-align: left">17</td>
+<td style="text-align: right">Methodes ois11-Week 7</td>
+</tr>
+<tr><td style="text-align: left">18</td>
+<td style="text-align: right">Continue and break</td>
+</tr>
+<tr><td style="text-align: left">19</td>
+<td style="text-align: right">Namespace en class: fun12_Class</td>
+</tr>
+<tr><td style="text-align: left">20</td>
+<td style="text-align: right">Constructors ois12 en fun12: Constr.</td>
+</tr>
+<tr><td style="text-align: left">21</td>
+<td style="text-align: right">Private / public ois12 en fun12: Private / public</td>
+</tr>
+<tr><td style="text-align: left">22</td>
+<td style="text-align: right">Overload / enums ois12:Enums fun12:ToString</td>
+</tr>
+<tr><td style="text-align: left">23</td>
+<td style="text-align: right">Properties ois12:Properties</td>
+</tr>
+<tr><td style="text-align: left">24</td>
+<td style="text-align: right">Exceptions ois12: Exceptions</td>
+</tr>
+</table>
+
+
+
+</section>
+
+</section></section><section>
+<h1>4. ProgrammeerConcepten</h1>
+
+
+<section>
+<h2>4.1. Herhaling OIS11</h2>
+<a id="cha:knowOis11dictaat"></a>
+
+<section>
+<h3>0.0.1. Werken met variabelen in C#</h3>
+
+<section>
+<h4>0.0.1.1. Typen variabelen</h4>
+
+<p>
+Een variabele is een stukje geheugen waarin tijdelijk
+een waarde kan worden  opgeslagen. De veelgebruikte typen variabelen zijn:
+</p>
+
+<table style="border: solid thin"><tr><th>Inhoud</th>
+<th>Naam</th>
+<th>Voorbeelden</th>
+</tr>
+<tr><td style="text-align: left">Stukje tekst</td>
+<td style="text-align: left">String</td>
+<td style="text-align: left">&quot;abcde&quot;</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">&quot;dit is een tekst&quot;</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">&quot;&quot;</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">etc.</td>
+</tr>
+<tr><td style="text-align: left">Geheel getal</td>
+<td style="text-align: left">Int</td>
+<td style="text-align: left">12</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">-1337</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">0</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">etc.</td>
+</tr>
+<tr><td style="text-align: left">Komma getal</td>
+<td style="text-align: left">Double</td>
+<td style="text-align: left">10.2</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">-12.3</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">5.0</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">etc.</td>
+</tr>
+<tr><td style="text-align: left">Waar of niet waar</td>
+<td style="text-align: left">Bool</td>
+<td style="text-align: left">true, false</td>
+</tr>
+</table>
+
+
+</section><section>
+<h4>0.0.1.2. Variabele aanmaken (declareren)</h4>
+<p>
+Variabelen kunnen op verschillende manieren worden aangemaakt, enkele voorbeelden staan hieronder. Merk op dat:
+</p><ul>
+<li>Je de variabele naam zelf kunt kiezen</li>
+<li>De regel moet worden beeindigd met een &quot;;&quot;-teken</li>
+</ul>
+
+<p>
+Op verschillende manieren kunnen variabelen worden aangemaakt. Programmeer op een lege regel het type van de variabele (zie hierboven), de naam die je de variabele wil geven (deze kies je zelf) en een &quot;;&quot; teken om het programmeercommando af te sluiten.
+</p>
+<table style="border: solid thin"><tr><th>Voorbeeld</th>
+<th>Effect</th>
+</tr>
+<tr><td style="text-align: left">String s;</td>
+<td style="text-align: left">Variabele met de naam s wordt aangemaakt.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">De default waarde is &quot;&quot;.</td>
+</tr>
+<tr><td style="text-align: left"><code>int i;</code></td>
+<td style="text-align: left">Variabele met de naam <code>i</code> wordt aangemaakt.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">De default waarde is 0.</td>
+</tr>
+<tr><td style="text-align: left"><code>double d;</code></td>
+<td style="text-align: left">Variabele met de naam &quot;d&quot; wordt aangemaakt.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">De default waarde is 0.0</td>
+</tr>
+<tr><td style="text-align: left">Bool b;</td>
+<td style="text-align: left">Variabele met de naam &quot;b&quot; wordt aangemaakt.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">De default waarde is false</td>
+</tr>
+<tr><td style="text-align: left">String mijnString;</td>
+<td style="text-align: left">Variabele met de naam &quot;mijnString&quot; wordt aangemaakt.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">De default waarde is &quot;&quot;</td>
+</tr>
+<tr><td style="text-align: left">int getal;</td>
+<td style="text-align: left">Variabele met de naam &quot;getal&quot; wordt aangemaakt.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">De default waarde is 0</td>
+</tr>
+<tr><td style="text-align: left">double straal;</td>
+<td style="text-align: left">Variabele met de naam &quot;straal&quot; wordt aangemaakt.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">De default waarde is 0.0</td>
+</tr>
+</table>
+
+<p>
+Direct na het aanmaken heeft een <code>variabele</code> een <code>waarde</code> die we
+de <code>default waarde</code> noemen. Dit kan per programmeertaal enigszins
+verschillen. Daarom is het een goede gewoonte variabelen waarvan je
+wil dat ze een specifieke waarde hebben deze waarde expliciet
+toe te kennen.
+</p>
+</section><section>
+<h4>0.0.1.3. Waarde aan variabele geven (toekenning of <code>assignment</code>)</h4>
+<p>
+Als een variabele eenmaal is aangemaakt kan hier een waarde aan worden toegekend.
+Merk op:
+</p><ul>
+<li>Alleen geldige waarden kunnen worden toegekend (string waarden aan strings, getallen aan int, etc.), het programmeren van een niet geldige toekenning levert een fout op waardoor het programma niet kan worden uitgevoerd.</li>
+<li>De variabele waaraan een waarde moet worden toegekend staat aan de linkerkant van het &quot;=&quot; teken, en de waarde welke in de variabele moet worden gestopt staat rechts van het &quot;=&quot; teken.</li>
+<li>De regel code wordt weer beeindigd met het &quot;;&quot;-teken.</li>
+</ul>
+
+<p>
+Hier volgen enkele voorbeelden. In commentaar staat erbij uitgelegd
+wat het betekent.
+</p><figure><pre><code>String s;     // maak een variabele aan met naam &quot;s&quot;.
+s = &quot;test&quot;;	  // Variabele met de naam &quot;s&quot; krijgt de waarde &quot;test&quot;.</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>int i;
+i = 10;	// maak variabele met naam &quot;i&quot; aan en geef die waarde 10</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>double d;
+d = 1.52; //	Nieuwe variabele genaamd &quot;d&quot; krijgt de waarde 1,52</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>bool b;
+b = true;	// Nieuwe variabele &quot;b&quot; krijgt de waarde true</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>String string1;
+string 1 = &quot;abc&quot;;
+String string2;
+string2 = string1;	// Variabele met de naam &quot;string2&quot; krijgt
+                    // de waarde van &quot;string1&quot;, namelijk &quot;abc&quot;</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>int getalA;
+getalA = 5;
+int getalB;
+getalB  = getalA;	// Variabele met de naam &quot;getalB&quot; krijgt
+                  // de waarde van &quot;getalA&quot;, namelijk 5</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>double kommaGetalA;
+kommaGetalA = 1.32;
+double kommaGetalB;
+kommaGetalB  = kommaGetalA;	// Variabele met de naam &quot;kommaGetalB&quot; krijgt
+                            // de waarde van &quot;kommaGetalA&quot;,
+                            // namelijk 1.32</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>String s;
+s = textBox1.Text;
+    // Variabele met de naam &quot;s&quot; krijgt
+    // als waarde de tekst die in de
+    // TextBox genaamd &quot;textBox1&quot; staat.</code></pre><figcaption></figcaption></figure>
+<p>
+Dit werkt omdat de <code>Text property</code> van de <em>TextBox</em> ook
+van het <code>type</code> <code>string</code> is.
+</p>
+
+</section><section>
+<h4>0.0.1.4. Variabele aanmaken en direct een waarde geven (<code>declare</code> en <code>initialize</code>)</h4>
+
+<p>
+Variabele met de naam <em>s</em> aanmaken en waarde &quot;test&quot; toekennen:
+</p><figure><pre><code>String s = &quot;test&quot;;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele met de naam <em>i</em> aanmaken en waarde <code>10</code> toekennen:
+</p><figure><pre><code>int i =10;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele met de naam <em>d</em>  aanmaken en waarde <code>1,52</code> toekennen:
+</p><figure><pre><code>double d = 1.52;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele met de naam <em>b</em> aanmaken en waarde <code>true</code> toekennen:
+</p><figure><pre><code>bool b = true;</code></pre><figcaption></figcaption></figure>
+
+</section><section>
+<h4>0.0.1.5. Waarden omzetten naar andere typen (<code>convert</code>)</h4>
+<p class="note">Merk op: het omzetten van een <code>int</code> of <code>double</code> naar een <code>String</code> lukt altijd, andersom lukt niet altijd en kan een foutmelding opleveren tijdens het uitvoeren van het programma (<code>crash</code> of <code>Unhandled Exception</code>).</p>
+<p class="note">Een <code>bool</code> variabele kan niet worden geconverteerd.</p>
+<p>
+Zet de waarde van <em>i</em> om
+naar een tekst met dezelfde waarde. Het
+resultaat van de laatste regel is dat variabele <em>s</em> de waarde <code>81</code> krijgt.
+</p><figure><pre><code>int i = 81;
+String s;
+s = Convert.ToString(i);</code></pre><figcaption></figcaption></figure>
+
+<p>
+Zet de waarde van <em>d</em> om naar een tekst met dezelfde waarde.
+Het resultaat van de laatste regel is dat variabele <em>s</em>
+de waarde <code>&quot;12.33&quot;</code> krijgt:
+</p><figure><pre><code>double d =12.33;
+String s;
+s = Convert.ToString(d);</code></pre><figcaption></figcaption></figure>
+
+<p>
+Zet de waarde van <em>s</em> om naar een geheel getal (<code>integer</code>)
+met dezelfde waarde als dat lukt (anders krijg je een foutmelding).
+Het resultaat van de laatste regel is dat variabele <em>i</em> de
+waarde <code>7</code> krijgt:
+</p><figure><pre><code>int i;
+String s = &quot;7&quot;;
+i  = Convert.ToInt32(s);</code></pre><figcaption></figcaption></figure>
+
+<p>
+Zet de waarde van <em>s</em> om naar een <em>kommagetal</em> met
+dezelfde waarde als dat lukt (anders krijg je een foutmelding).
+Het resultaat van de laatste regel is dat variabele <em>d</em> de
+waarde <code>12.129</code> krijgt:
+</p><figure><pre><code>double d;
+String s = &quot;12.129&quot;;
+d  = Convert.ToDouble(s);</code></pre><figcaption></figcaption></figure>
+
+</section><section>
+<h4>0.0.1.6. String bewerkingen (String functies)</h4>
+<p>
+Hieronder worden enkele veelgebruikte String functies gedemonstreerd en kort toegelicht.
+</p>
+<section>
+<h5>0.0.1.6.1. String’s samenvoegen</h5>
+<p>
+Met het <code>plus</code> teken kunnen strings aan elkaar worden geplakt.
+</p><figure><pre><code>string tekst = &quot;een tekst.&quot;;
+string woorden = &quot;Hier staat&quot;;
+string s = woorden+tekst;</code></pre><figcaption></figcaption></figure>
+
+<p>
+De <code>s</code> <code>variabele</code> krijgt hier de waarde <code>&quot;Hier staateen tekst.&quot;</code> Merk op dat niet automatisch spaties worden toegevoegd.
+</p>
+<figure><pre><code>  string tekst = &quot;tekst.&quot;;
+  string woorden = &quot;Hier staat&quot;;
+  string s = woorden + &quot; een &quot; + tekst;</code></pre><figcaption></figcaption></figure>
+
+<p>
+	 Met het &quot;+&quot;-teken kunnen strings aan elkaar worden geplakt.
+De &quot;s&quot; variabele krijgt hier de waarde &quot;Hier staat een tekst.&quot;
+</p>
+</section><section>
+<h5>0.0.1.6.2. <code>IndexOf</code></h5>
+
+<p>
+De plaats van een String binnen een andere String bepalen:
+</p>
+<p>
+De <em>Positie</em> variabele krijgt de waarde <code>1</code>.
+Merk op dat de positie van de eerste gevonden &quot;e&quot; in de String
+wordt gevonden (waarbij vanaf <code>0</code> wordt geteld):
+</p><figure><pre><code>string tekst = &quot;regel tekst&quot;;
+int positie = tekst.IndexOf(&quot;e&quot;);</code></pre><figcaption></figcaption></figure>
+
+<p>
+Er kan ook naar meerdere letters achter elkaar gezocht worden:
+</p><figure><pre><code>string tekst = &quot;regel tekst&quot;;
+int positie = tekst.IndexOf(&quot;tek&quot;);</code></pre><figcaption></figcaption></figure>
+<p>
+De &quot;Positie&quot; variabele krijgt de waarde 6.
+</p>
+<p>
+<strong>Niet gevonden</strong> geeft <code>-1</code>:
+</p><figure><pre><code>string tekst = &quot;regel tekst&quot;;
+int positie = tekst.IndexOf(&quot;a&quot;);</code></pre><figcaption></figcaption></figure>
+<p>
+De &quot;Positie&quot; variabele krijgt de waarde -1. De waarde -1 betekent dus: de String komt niet voor binnen de andere String.
+</p>
+</section><section>
+<h5>0.0.1.6.3. Substring</h5>
+<p>
+Een stukje uit een string kopiëren:
+</p><figure><pre><code>string tekst = &quot;regel tekst&quot;;
+string deelTekst = tekst.Substring(0, 1);</code></pre><figcaption></figcaption></figure>
+<p>
+wat heeft als resultaat dat in deelTekst de waarde &quot;r&quot; komt te staan omdat van de oorspronkelijke tekst vanaf positie 0 precies 1 letter gekopieerd wordt.
+</p>
+<figure><pre><code>string tekst = &quot;regel tekst&quot;;
+string deelTekst = tekst.Substring(6, 5);</code></pre><figcaption></figcaption></figure>
+<p>
+Deze code heeft als resultaat dat in deelTekst de waarde &quot;tekst&quot; komt te staan omdat van de oorspronkelijke tekst vanaf positie 6 precies 5 letters gekopieerd worden.
+</p>
+</section><section>
+<h5>0.0.1.6.4. Length</h5>
+
+<p>
+Aantal tekens van de String bepalen. Achter <code>Length</code> hoeven
+geen haakjes openen en sluiten geplaatst te worden omdat het
+een <code>property</code> (eigenschap) van de string is en niet een <code>method</code>
+die je uitvoert.
+</p>
+<figure><pre><code>string tekst = &quot;regel tekst&quot;;
+int lengte = tekst.Length;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Deze code heeft als resultaat dat in lengte de waarde <code>11</code> komt te staan omdat de tekst precies elf lang is. Merk op: dit is inclusief spaties in de tekst.
+De <code>double quotes</code> om begin en einde van de String waarde aan te geven worden niet meegeteld.
+</p>
+<figure><pre><code>string tekst = &quot;&quot;;
+int lengte = tekst.Length;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Deze code heeft als resultaat dat in <em>lengte</em> de waarde <code>0</code> komt te staan
+omdat geen tekens in de string staan.
+</p>
+</section></section><section>
+<h4>0.0.1.7. int en double bewerkingen (operatoren)</h4>
+
+<p>
+Onderstaande bewerkingen zijn zowel op <code>int</code> <code>typen</code> als
+op <code>double</code> typen van toepassing:
+</p>
+<figure><pre><code>int k;
+k = 5 + 10;</code></pre><figcaption></figcaption></figure>
+<p>
+Aan variabele <em>k</em> wordt in de laatste regel code de waarde <code>15</code> toegekend
+omdat het <code>+</code>teken de waarden <code>5</code> en <code>10</code> bij elkaar optelt.
+</p>
+<figure><pre><code>int i = 2;
+int k;
+k = i + 1;</code></pre><figcaption></figcaption></figure>
+<p>
+Aan variabele <em>k</em> wordt in de laatste regel code de waarde 3 toegekend
+omdat het <code>+</code>teken de waarden <code>2</code> en <code>1</code> bij elkaar optelt.
+</p>
+<figure><pre><code>int i = -8;
+int k;
+k = 1 + i;</code></pre><figcaption></figcaption></figure>
+<p>
+Aan variabele <em>k</em> wordt in de laatste regel code de waarde <code>-7</code> toegekend
+omdat het <code>+</code>teken de waarden <code>1</code> en <code>-8</code> bij elkaar optelt.
+</p>
+<figure><pre><code>int i = 5;
+int j = 3;
+int k;
+k = i + j;</code></pre><figcaption></figcaption></figure>
+<p>
+Aan variabele <em>k</em> wordt in de laatste regel code de waarde <code>8</code> toegekend
+omdat het <code>+</code>teken de waarden uit <em>i</em> en <em>j</em> bij elkaar op telt.
+</p>
+<p>
+Bij bovenstaande voorbeelden kan de operator (het <code>+</code>teken)
+worden vervangen door één van de volgende mogelijkheden:
+</p><table style="border: solid thin"><tr><th>Symbool</th>
+<th>Uitwerking</th>
+</tr>
+<tr><td style="text-align: left">+</td>
+<td style="text-align: left">Optellen</td>
+</tr>
+<tr><td style="text-align: left">-</td>
+<td style="text-align: left">Aftrekken</td>
+</tr>
+<tr><td style="text-align: left">*</td>
+<td style="text-align: left">Vermenigvuldigen</td>
+</tr>
+<tr><td style="text-align: left">/</td>
+<td style="text-align: left">Delen</td>
+</tr>
+<tr><td style="text-align: left">%</td>
+<td style="text-align: left">Geeft de rest na deling. Bijvoorbeeld:</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">7 % 5 = 2</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">11 % 2 = 1</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left">6 % 2 = 0</td>
+</tr>
+</table>
+<p>
+ 
+</p></section></section><section>
+<h3>0.0.2. Werken met keuzestructuren in C#</h3>
+<p>
+Als een stukje code soms wel en soms niet moet worden uitgevoerd,
+dan heb je een <code>if</code> of <code>if … else</code> <code>statement</code> nodig.
+Moet een stukje code soms één keer en soms vaker worden herhaald,
+dan heb je een <code>for</code> of <code>while</code> <code>statement</code> nodig.
+</p>
+<section>
+<h4>0.0.2.1. <code>if-statement</code></h4>
+<p>
+Deze structuur wordt gebruikt om een stukje code uit te voeren
+afhankelijk van een bepaalde situatie (de <code>conditie</code> genoemd).
+Algemene vorm:
+</p>
+<figure><pre><code>if ([conditie])
+{
+  [Uit te voeren code als conditie waar is]
+}</code></pre><figcaption></figcaption></figure>
+<p>
+waarbij <code>conditie</code> is een stelling die de waarde
+<code>true</code> (<em>waar</em>) of <code>false</code> (<em>niet waar</em>) heeft.
+</p>
+<p>
+Voorbeelden van condities:
+</p><table style="border: solid thin"><tr><th>Conditie</th>
+<th>Betekenis</th>
+</tr>
+<tr><td style="text-align: left">true</td>
+<td style="text-align: left">Waar</td>
+</tr>
+<tr><td style="text-align: left">false</td>
+<td style="text-align: left">Niet waar</td>
+</tr>
+<tr><td style="text-align: left">i &gt; 5</td>
+<td style="text-align: left">Is i groter dan 5?</td>
+</tr>
+<tr><td style="text-align: left">i &lt; 7</td>
+<td style="text-align: left">Is i kleiner dan 7?</td>
+</tr>
+<tr><td style="text-align: left">i &gt;= 1</td>
+<td style="text-align: left">Is i groter of gelijk aan 1?</td>
+</tr>
+<tr><td style="text-align: left">i &lt;= 2</td>
+<td style="text-align: left">Is i kleiner of gelijk aan 2?</td>
+</tr>
+<tr><td style="text-align: left">i  == 3</td>
+<td style="text-align: left">Is i precies gelijk aan 3?</td>
+</tr>
+<tr><td style="text-align: left">i  != 3</td>
+<td style="text-align: left">Is i ongelijk aan 3?</td>
+</tr>
+<tr><td style="text-align: left">stukjeText == &quot;abcde&quot;</td>
+<td style="text-align: left">Is <em>stukjeText</em> precies gelijk aan &quot;abcde&quot;?</td>
+</tr>
+<tr><td style="text-align: left">stukjeText &lt; &quot;abcde&quot;</td>
+<td style="text-align: left">Komt <em>stukjeText</em> eerder in het alphabet dan &quot;abcde&quot;?</td>
+</tr>
+<tr><td style="text-align: left">etc.</td>
+<td style="text-align: left"></td>
+</tr>
+</table>
+
+<p>
+Verder staat <em>[Uit te voeren code als conditie waar is]</em> voor
+een stukje code (dit kunnen meerdere regels code zijn)
+dat moet worden uitgevoerd als de conditie <code>true</code> (<em>waar</em>) is.
+</p>
+<p>
+Als precies één regel code moet worden uitgevoerd zou je ervoor
+kunnen kiezen de accolades openen en sluiten weg te laten,
+maar dit maakt de kans op bugs een stuk groter,
+dus dat raden we af.
+</p>
+<p>
+ 
+</p></section><section>
+<h4>0.0.2.2. <code>if … else … statement</code></h4>
+
+<p>
+Een if statement kan uitgebreid worden met een &quot;else&quot; blok. Als de conditie niet &quot;waar&quot; oplevert dan wordt de code in het else blok uitgevoerd.
+Algemene vorm:
+</p>
+<figure><pre><code>if ([conditie])
+{
+[Uit te voeren code als conditie waar is]
+}
+else
+{
+ [Uit te voeren code als conditie niet waar is]
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Merk op: of de conditie nu wel of niet waar is, altijd wordt één van de twee stukjes code uitgevoerd.
+</p>
+</section><section>
+<h4>0.0.2.3. Voorbeelden &quot;if …&quot; statement en &quot;if … else …&quot; statement</h4>
+
+<figure><pre><code>if (true)
+{
+	TextBox1.Text = &quot;test&quot;;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Het stukje code tussen { en } wordt altijd uitgevoerd,
+dus de <code>Text</code> van de <em>TextBox</em> wordt altijd &quot;test&quot; gemaakt.
+</p>
+<figure><pre><code>if (false)
+{
+	TextBox1.Text = &quot;test&quot;;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Het stukje code tussen { en } wordt nooit uitgevoerd.
+</p>
+<figure><pre><code>bool b = true;
+if (b)
+{
+	TextBox1.Text = &quot;test&quot;;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Als <code>b</code> de waarde <code>true</code> (= <em>waar</em>)
+heeft wordt de <code>Text</code> in de <em>TextBox</em> &quot;test&quot;  gemaakt.
+Dit is hier nu altijd het geval omdat in dit stukje code
+aan variabele <code>b</code> alleen de waarde &quot;true&quot; wordt toegekend.
+</p>
+<figure><pre><code>int i = 10;
+if (i &lt; 5)
+{
+  i  = i + 1;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Als getal <code>i</code> kleiner dan 5 is,
+dan wordt bij de waarde van <code>i</code> één opgeteld,
+anders gebeurt er niets.
+</p>
+<figure><pre><code>TextBox1.Text = &quot;test2&quot;;
+if (TextBox1.Text !=  &quot;test&quot;)
+{
+  TextBox1.Text = &quot;test3&quot;;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Als de tekst in de textbox niet gelijk is aan &quot;test&quot; (dat is hier het geval) dan wordt de tekst van de textbox veranderd in &quot;test3&quot;.
+</p>
+<figure><pre><code>if (true)
+{
+	TextBox1.Text = &quot;test&quot;;
+}
+else
+{
+	TextBox1.Text = &quot;test2&quot;;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Het stukje code tussen de eerste { en } wordt altijd uitgevoerd,
+dus de <code>Text</code> van de <code>TextBox</code> wordt altijd &quot;test&quot; gemaakt.
+Het stukje code tussen de tweede { en } wordt nooit uitgevoerd.
+</p>
+<figure><pre><code>int i = 5;
+if (i &gt;= 10)
+{
+  i  = i + 1;
+}
+else
+{
+  i = i + 5;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Als getal <em>i</em> groter of gelijk aan <code>10</code> is
+dan wordt bij getal <em>i</em> <code>1</code> opgeteld.
+Dit is hier niet het geval, dus wordt bij <em>i</em> <code>5</code> opgeteld.
+Resultaat: <em>i</em> krijgt de waarde <code>10</code>.
+</p>
+<figure><pre><code>int i = 5;
+if (i &gt;= 10)
+{
+  i  = i + 1;
+}
+else
+{
+  i = i + 5;
+  if (i &gt;= 10)
+  {
+    i = 20;
+  }
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Als getal <em>i</em> groter of gelijk aan <code>10</code> is
+dan wordt bij getal <em>i</em> <code>1</code> opgeteld.
+Dit is hier niet het geval, dus wordt bij <em>i</em> <code>5</code> opgeteld.
+Resultaat: <em>i</em> krijgt de waarde <code>10</code>,
+vervolgens wordt gecontroleerd of <code>i &gt;= 10</code>,
+dat is nu het geval dus krijgt <em>i</em> uiteindelijk de waarde <code>20</code> toegekend.
+</p>
+</section><section>
+<h4>0.0.2.4. <code>while statement</code></h4>
+<p>
+Deze structuur wordt gebruikt om een stukje code uit te voeren
+zolang aan bepaalde voorwaarden is voldaan.
+Dit varieert van <code>0</code> keer de code uitvoeren tot het
+in de oneindigheid aantal keer uitvoeren van de code).
+</p>
+<p>
+Algemene vorm:
+</p><figure><pre><code>  while ([conditie])
+  {
+  [Uit te voeren code zolang de conditie waar is]
+  }</code></pre><figcaption></figcaption></figure>
+
+<p class="note">Na de eerste regel staat geen &quot;;&quot; teken.</p>
+<p class="note">Eerst wordt gecontroleerd of aan een voorwaarde is voldaan, dan pas wordt eventueel code uitgevoerd.</p>
+</section><section>
+<h4>0.0.2.5. <code>do while statement</code></h4>
+
+<p>
+Deze structuur wordt gebruikt om een stukje code uit te voeren. Elke keer nadat het stukje code is uitgevoerd wordt gecontroleerd of nog aan bepaalde voorwaarden is voldaan, zo ja, dan wordt de code opnieuw uitgevoerd. Het aantal keer uitvoeren van de code varieert van 1 keer de code uitvoeren tot het in de oneindigheid aantal keer uitvoeren van de code.
+</p>
+<p>
+Algemene vorm:
+</p><figure><pre><code>do
+{
+  [Uit te voeren code zolang de conditie waar is]
+} while ([conditie]);</code></pre><figcaption></figcaption></figure>
+
+<p class="note">Na de laatste regel staat een &quot;;&quot; teken.</p>
+<p class="note">Eerst wordt de code één keer uitgevoerd, dan pas wordt gecontroleerd of de code eventueel vaker moet worden uitgevoerd.</p><p>
+ 
+</p></section><section>
+<h4>0.0.2.6. Voorbeelden <code>while</code> en <code>do while statement</code></h4>
+
+<figure><pre><code>int i = 0;
+while(i &lt; 10)
+{
+	MessageBox.Show(&quot;Test&quot;);
+  i = i + 1;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele <em>i</em> krijgt in het begin de waarde <code>0</code>
+en er wordt net zo lang doorgegaan met <em>MessageBoxes</em> weergeven
+totdat <em>i</em> kleiner dan <code>10</code> is.
+De code wordt dus doorlopen met achtereenvolgens
+de waarden <code>0</code> , <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, <code>7</code>, <code>8</code> en <code>9</code>.
+Er worden daarom <code>10</code> <em>Messageboxes</em> getoond met de tekst <code>&quot;Test&quot;</code>.
+</p>
+<figure><pre><code>int i = 5;
+while(i &gt; 0)
+{
+	MessageBox.Show(&quot;Test&quot;);
+  i = i – 1;
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele <em>i</em> krijgt in het begin de waarde <code>5</code> en er wordt
+direct gestopt als <em>i</em> de waarde <code>0</code> krijgt toegekend.
+De code wordt dus doorlopen met
+de waarden <code>5</code>, <code>4</code>, <code>3</code>, <code>2</code>, <code>1</code>.
+Er worden daarom <code>5</code> <em>Messageboxes</em> getoond met de tekst <code>&quot;Test&quot;</code>.
+</p>
+<figure><pre><code>int i = 10;
+do
+{
+	MessageBox.Show(&quot;Test&quot;);
+  i = i + 1;
+}
+while (i &lt; 5);</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele <em>i</em> krijgt in het begin de waarde <code>10</code>,
+de code wordt uitgevoerd, en vervolgens
+wordt net zo lang doorgegaan met <em>Messageboxes</em> weergeven
+totdat <em>i</em> kleiner dan <code>5</code> is.
+De code wordt dus doorlopen met de waarde <code>10</code>.
+Er wordt daarom <code>1</code> <em>Messagebox</em> getoond met de tekst <code>&quot;Test&quot;</code>.
+</p>
+</section><section>
+<h4>0.0.2.7. <code>for statement</code></h4>
+
+<p>
+Deze structuur wordt gebruikt om een stukje code een
+vooraf bekend aantal keer uit te laten voeren.
+</p>
+<p>
+Algemene vorm:
+</p><figure><pre><code>for([teller variabele aanmaken]; [herhalingsconditie]; [teller variabele aanpassen])
+{
+  [herhaaldelijk uit te voeren code]
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+waarbij <em>[teller variabele aanmaken]</em>	een <code>variabele</code> met
+zelf te kiezen variabelenaam wordt aangemaakt en van een waarde voorzien.
+Veel gebruikte variabele namen voor een for statement zijn &quot;i&quot;, &quot;j&quot;, &quot;k&quot;
+omdat deze een hele korte naam hebben, dat leest in veel gevallen prettig.
+Ook &quot;index&quot;, &quot;count&quot; of &quot;teller&quot; worden vaak gebruikt.
+Het type variabele is meestal int.
+De waarde waarmee de teller wordt gevuld is afhankelijk van wat je
+aan het programmeren bent. In veel gevallen heeft deze de waarde <code>0</code>.
+</p>
+<p>
+Voorbeelden:
+</p><figure><pre><code>int i = 0</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>int j = 100</code></pre><figcaption></figcaption></figure>
+
+<p>
+Dan <em>[herhalingsconditie]</em>: deze uit te voeren code wordt
+net zo lang herhaald als uit de voorwaarde de waarde <code>true</code> komt.
+Hierin verwijs je naar de <em>teller</em> variabele.
+</p>
+<p>
+Voorbeelden:
+</p><figure><pre><code>i &lt; 10
+j &gt; 0</code></pre><figcaption></figcaption></figure>
+
+<p>
+[teller variabele aanpassen]
+	Het verhogen of verlagen van de teller. Vaak wordt deze met 1 verhoogd of verlaagd, soms in grotere stappen (bijv. <code>10</code>).
+</p>
+<p>
+Voorbeelden:
+</p>
+<figure><pre><code>i = i + 1
+j = j – 10</code></pre><figcaption></figcaption></figure>
+
+<p>
+[herhaaldelijk uit te voeren code]
+	Het stukje code (dit kunnen meerdere regels code zijn) dat moeten worden uitgevoerd zolang de herhalingsconditie &quot;true&quot; (waar) is.
+</p>
+<p>
+Ieder <code>for</code>statement is om te zetten naar een <code>while</code> statement
+dat hetzelfde doet, en andersom.
+ 
+</p></section><section>
+<h4>0.0.2.8. Voorbeelden <code>for statement</code></h4>
+
+<figure><pre><code>for(int i =0 ; i &lt; 10 ; i = i + 1)
+{
+	MessageBox.Show(&quot;Test&quot;);
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele <code>i</code> krijgt in het begin de waarde 0 en er wordt direct gestopt als i de waarde 10 krijgt toegekend. De code wordt dus doorlopen met de waarden 0,1,2,3,4,5,6,7,8 en 9. Er worden daarom 10 messagebox-en getoond met de tekst &quot;Test&quot;.
+</p>
+<figure><pre><code>for(int i =5;i &gt; 0; i = i - 1)
+{
+	MessageBox.Show(&quot;Test&quot;);
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Variabele <code>i</code> krijgt in het begin de waarde 5 en er wordt direct gestopt als i de waarde 0 krijgt toegekend. De code wordt dus doorlopen met de waarden 5,4,3,2,1. Er worden daarom 5 messagebox-en getoond met de tekst &quot;Test&quot;.
+</p>
+<figure><pre><code>for(int i =0;i &lt; 10;i++)
+{
+	MessageBox.Show(&quot;Test&quot;);
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Hetzelfde resultaat als het eerste voorbeeld,
+maar dan in een verkorte schrijfwijze:
+</p><figure><pre><code>i = i + 1;</code></pre><figcaption></figcaption></figure>
+<p>
+is hetzelfde als
+</p><figure><pre><code>i++;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Hetzelfde resultaat als het tweede voorbeeld,
+maar dan in een verkorte schrijf-wijze:
+</p><figure><pre><code>for(int i =5;i &gt; 0; i--)
+{
+	MessageBox.Show(&quot;Test&quot;);
+}</code></pre><figcaption></figcaption></figure>
+
+<figure><pre><code>i=i-1;</code></pre><figcaption></figcaption></figure>
+<p>
+is hetzelfde als
+</p><figure><pre><code>i--;</code></pre><figcaption></figcaption></figure>
+
+
+<p>
+De code
+</p><figure><pre><code>for(int i =0;i &lt; 10; i++)
+{
+	MessageBox.Show(&quot;Test &quot;+i);
+}</code></pre><figcaption></figcaption></figure>
+<p>
+heeft als resultaat dat <em>MessageBoxes</em>
+verschijnen met achtereenvolgens:
+</p><figure><pre><code>&quot;Test 0&quot;
+&quot;Test 1&quot;
+&quot;Test 2&quot;
+&quot;Test 3&quot;
+&quot;Test 4&quot;
+&quot;Test 5&quot;
+&quot;Test 6&quot;
+&quot;Test 7&quot;
+&quot;Test 8&quot;
+&quot;Test 9&quot;</code></pre><figcaption></figcaption></figure>
+
+<p>
+De code
+</p><figure><pre><code>for(int i =5;i &gt; 0; i = i - 2)
+{
+	MessageBox.Show(&quot;Test &quot;+i);
+}</code></pre><figcaption></figcaption></figure>
+<p>
+laat messagebox-en verschijnen met achtereenvolgens:
+</p><figure><pre><code>&quot;Test 5&quot;
+&quot;Test 3&quot;
+&quot;Test 1&quot;</code></pre><figcaption></figcaption></figure>
+<p>
+en tot slot geeft
+</p><figure><pre><code>for(int y =0;y &lt; 2; y++)
+{
+  for(int x =0;x &lt; 3; x++)
+  {
+    MessageBox.Show(&quot;(&quot;+x+&quot;,&quot;+y+&quot;)&quot;);
+  }
+}</code></pre><figcaption></figcaption></figure>
+<p>
+als resultaat <em>MessageBoxes</em> verschijnen met:
+</p><figure><pre><code>&quot;(0,0)&quot;
+&quot;(1,0)&quot;
+&quot;(2,0)&quot;
+&quot;(0,1)&quot;
+&quot;(1,1)&quot;
+&quot;(2,1)&quot;</code></pre><figcaption></figcaption></figure>
+
+
+
+
+
+</section></section><section>
+<h3>0.0.3. Werken met methoden in C#</h3>
+
+<section>
+<h4>0.0.3.1. Algemene structuur methoden</h4>
+
+<p>
+Een methode is een stukje code dat vanuit een ander stukje code
+is aan te roepen. Als een methode een waarde terug geeft
+welke gebruikt gaat worden in het stukje code waar vanuit
+deze is aangeroepen spreek je over een methode welke &quot;een waarde teruggeeft&quot;.
+Ook kunnen aan een methode één of meer waarden worden meegegeven.
+Dit worden argumenten genoemd.
+</p>
+</section><section>
+<h4>0.0.3.2. Belangrijkste voordelen van het gebruik van methoden:</h4>
+<ol><li>Overzichtelijkheid: Als alle code in één enkele event handler (bijv. <em>ButtonX_Click</em>) wordt geplaatst wordt je code al snel erg overzichtelijk.</li>
+<li>Werk verdelen: Als je voordat je gaat programmeren het programmeerwerk wilt verdelen kun je de te maken code opdelen in methoden en deze met verschillende programmeurs tegelijkertijd programmeren.</li>
+<li>Onderhoudbaarheid &amp; herbruikbaarheid: Als je op verschillende plaatsen in je programma hetzelfde stuk code vaker uit wilt voeren kun je vanaf de verschillende plaatsen een methode aanroepen die je maar één keer hoeft te programmeren.  Dat scheelt code en is gemakkelijker te onderhouden dan dat je code verschillende keren in je programma kopiert en plakt.</li>
+</ol>
+
+<p>
+Een methode heeft de volgende structuur:
+</p>
+<figure><pre><code>private [returnType] [methodeNaam]([parameters])
+{
+  …
+  [return returnWaarde]
+}</code></pre><figcaption></figcaption></figure>
+
+<dl><dt><code>private</code></dt>
+<dd>geeft aan dat de <code>methode</code> alleen binnen het huidige bestand (lees: <code>Form1</code>) kan worden aangeroepen. Wat dit precies inhoudt is voor dit vak niet interessant, hier wordt later op teruggekomen.</dd>
+<dt>[returnType]</dt>
+<dd>Het type van de waarde die de methode terug geeft. Als de methode geen waarde terug geeft, is dit <code>void</code> (<em>niets</em>). Voorbeelden: <code>int</code>, <code>double</code>, <code>bool</code>, <code>string</code>, <code>void</code>.</dd>
+<dt>[methodeNaam]</dt>
+<dd>Zelf gekozen naam voor de methode, te vergelijken met een zelf gekozen naam voor een variabele.	Voorbeelden: <em>TelOp</em>, <em>ToonMelding</em>, <em>Methode1</em>, <em>Abc</em>.</dd>
+<dt>[parameters]</dt>
+<dd>Optioneel onderdeel. Hiermee wordt opgegeven welk(e) type(n) waarde(n) moet worden meegegeven aan de methode en onder welke naam deze waarde binnen de method kunnen worden gebruikt. Meerdere parameters worden gescheiden met een &quot;,&quot;-teken.	Voorbeelden: <code>int deler</code>, <code>int getalA</code>, <code>int getalB</code>, <code>bool isIngelogd</code>, <code>double eenKommaGetal</code>.</dd>
+<dt>[return returnWaarde]</dt>
+<dd>Met <code>return</code>&quot; gevolgd door een waarde die aan het <em>[returnType]</em> voldoet wordt een waarde teruggegeven vanuit de methode aan het stukje code dat de methode heeft aangeroepen. Als <em>[returnType]</em> <code>void</code> is hoeft er geen return worden gebruikt. Voorbeelden: <code>return uitkomst;</code>, <code>return 10;</code>, <code>return mijnTekst;</code>, <code>return &quot;Hallo&quot;+&quot; daar!&quot;;</code>, <code>return getal &gt; 10;</code></dd>
+</dl>
+
+
+</section><section>
+<h4>0.0.3.3. Voorbeelden Methoden</h4>
+
+<p>
+Een aantal voorbeeldmethoden:
+</p>
+<figure><pre><code>    private int AddTwoNumbers(int number1, int number2)
+    {
+        int som;
+        som = number1 + number2
+        return som;
+    }
+
+    private int SquareANumber(int number)
+    {
+        return number * number;
+    }</code></pre><figcaption></figcaption></figure>
+
+<p>
+Bovenstaande methoden zijn als volgt aan te roepen:
+</p>
+<figure><pre><code>	int sum = AddTwoNumbers(8765, 287);</code></pre><figcaption></figcaption></figure>
+<p>
+of:
+</p><figure><pre><code>	int kwadraat = SquareANumber(63);</code></pre><figcaption></figcaption></figure>
+<p>
+of, beiden:
+</p><figure><pre><code>	int total = SquareANumber(AddTwoNumbers(1, 2));</code></pre><figcaption></figcaption></figure>
+
+<section>
+<h5>0.0.3.3.1. Tekst en uitleg (engelstalig) over methoden en parameters</h5>
+<p>
+Zie bijvoorbeeld
+<a href="http://www.c-sharpcorner.com/UploadFile/myoussef/CSharpMethodsP_111152005003025AM/CSharpMethodsP_1.aspx">C-sharpcorner over methods</a>
+voor meer uitleg.
+</p>
+</section></section></section><section>
+<h3>0.0.4. Handige sneltoetsen en opties in Visual Studio</h3>
+
+<p class="note">Als in een sneltoets combinatie een komma staat, dan moet eerst het deel voor de komma worden ingedrukt, dan laat je de toetsen los en druk je daarna de letter in die na de komma staat.</p>
+<table style="border: solid thin"><tr><th>Sneltoets</th>
+<th>Menu</th>
+<th>Toelichting</th>
+</tr>
+<tr><td style="text-align: left">CTRL-W, X</td>
+<td style="text-align: left">View → Toolbox</td>
+<td style="text-align: left">Maakt het Toolbox scherm met alle</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">visuele objecten zichtbaar.</td>
+</tr>
+<tr><td style="text-align: left">CTRL-W, P</td>
+<td style="text-align: left">View → Properties</td>
+<td style="text-align: left">Window	Scherm met de</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">eigenschappen van visuele objecten</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">tonen. Hier vind je ook de events</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">van de visuele objecten.</td>
+</tr>
+<tr><td style="text-align: left">CTRL-W, E</td>
+<td style="text-align: left">View → Error List</td>
+<td style="text-align: left">Toont het scherm met de eventuele</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">fouten die in je code gevonden zijn</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">(ververs het scherm door je project</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">opnieuw te build-en met de F6 knop,</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">zie hieronder).</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Dubbelklikken op een error navigeert</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">naar de plaats in je code waar de</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">fout is gevonden.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Tip: bekijk eerst de eerste fout,</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">andere fouten kunnen hier een gevolg</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">van zijn.</td>
+</tr>
+<tr><td style="text-align: left">F6</td>
+<td style="text-align: left">Build → Build Solution</td>
+<td style="text-align: left">Controleert je code op fouten en bouwt</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">vervolgens een uitvoerbaar bestand.</td>
+</tr>
+<tr><td style="text-align: left">F5</td>
+<td style="text-align: left">Debug → Start Debugging</td>
+<td style="text-align: left">Build je project (zie F6 hierboven) als</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">dat nog niet gebeurd is, en voert het</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">uitvoerbaar bestand vervolgens uit.</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Dit doet hetzelfde als een klik op de knop</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">met het groene pijltje (<code>play</code>knop).</td>
+</tr>
+<tr><td style="text-align: left">Shift-F5</td>
+<td style="text-align: left"></td>
+<td style="text-align: left">Stop de uitvoer van je programma. Handig</td>
+</tr>
+<tr><td style="text-align: left"></td>
+<td style="text-align: left"></td>
+<td style="text-align: left">als je programma vast loopt.</td>
+</tr>
+</table>
+
+
+</section><section>
+<h3>0.0.5. Online C-sharp tutorials</h3>
+
+<section>
+<h4>0.0.5.1. MSDN tutorial</h4>
+<p>
+<a href="http://msdn.microsoft.com/en-us/vcsharp/aa336766.aspx">MSDN How do I Learn C# tutorials (Engelstalig)</a>
+</p>
+<p>
+Bruikbaarheid:	*
+</p>
+<p>
+Toelichting: 	Enkele gedetailleerde walkthroughs. Aanrader als je al bekend bent met programmeren in een andere programmeertaal.
+</p>
+</section><section>
+<h4>0.0.5.2. techzine tutorial</h4>
+<p>
+<a href="http://www.techzine.nl/tutorials/358/3/c-les-1-beginnen-met-c-de-eerste-stapjes.html">Les 1: Beginnen met C# (Nederlandstalig)</a>
+</p>
+<p>
+Bruikbaarheid:	****
+</p>
+<p>
+Toelichting: 	Uitleg over het maken van een programma aan de hand van een voorbeeldprogramma dat telkens een stukje wordt uitgebreid. Het gebruik van variabelen, FOR en WHILE lus worden uitgelegd. Let op: in deze tutorial wordt een Console applicatie gemaakt, dit is iets anders dan een Form applicatie.
+</p>
+</section><section>
+<h4>0.0.5.3. Webbrowser tutorial</h4>
+<p>
+<a href="http://www.sitemasters.be/tutorials/17/1/564/CSharp.NET/CSharp_Zelf_een_WebBrowser_maken">Zelf een webbrowser maken (Nederlandstalig)</a>
+</p>
+<p>
+Bruikbaarheid:	*
+</p>
+<p>
+Toelichting: 	Tutorial waarin een webbrowser gebouwd wordt. Weinig toelichting op wat er gebeurt maar wel een leuk eindresultaat. Deze tutorial is vanaf lesweek 3 redelijk goed te maken.
+</p>
+</section><section>
+<h4>0.0.5.4. Blackwasp tutorial</h4>
+<p>
+<a href="http://www.blackwasp.co.uk/">BlackWasp</a>
+</p>
+<p>
+Bruikbaarheid:	***
+</p>
+<p>
+Toelichting: 	Verzameling tutorials en artikelen (Engelstalig).
+</p>
+
+</section></section><section>
+<h3>0.0.6. Online C-sharp boeken</h3>
+
+<p>
+<a href="http://csharp-station.com/">C# Station Tutorial (Engelstalig)</a>
+Bruikbaarheid:	***
+Toelichting: 	Uitleg over de basis onderdelen van C# zoals expressies, typen, variabelen en controlestructuren. De &quot;lessons&quot; 1 t/m 5 zijn interessant voor OIS.
+</p>
+
+<p>
+<a href="http://www.robmiles.com/c-yellow-book/Rob%20Miles%20CSharp%20Yellow%20Book%202010.pdf">C# Yellow Book (Engelstalig)</a>
+Bruikbaarheid:	**
+</p><p>
+Toelichting: 	Compleet boek over programmer constructies en onderwerpen. Wellicht handig als naslagwerk, niet geschikt als leerboek voor OIS. Let op: in deze tutorial wordt uitgegaan van een Console applicatie als beginpunt, dit is iets anders dan een Form applicatie.
+</p>
+
+<p>
+ 
+</p></section><section>
+<h3>0.0.7. Bruikbare technieken proftaak</h3>
+<section>
+<h4>0.0.7.1. 3d objecten</h4>
+<p>
+In de eerste opdracht over XNA heb je met plaatjes gewerkt en niet met 3D-modellen.
+3D is mooier, echter en interessanter. Maar ook lastiger te implementeren.
+</p>
+<p>
+Op Internet zijn aardige voorbeelden te vinden.
+</p>
+<p>
+Probeer eerst deze uit:
+<a href="http://msdn.microsoft.com/en-us/library/bb203897(v=xnagamestudio.31).aspx">MSDN over XNA en 3D</a>
+</p>
+</section><section>
+<h4>0.0.7.2. WIIMote</h4>
+<p>
+In de opdracht &quot;1e XNA&quot;  heb je kunnen zien dat het XNA framework
+was toegevoegd aan Visual Studio 2010.
+Dit is te vinden in de solution Explorer onder Reference.
+</p>
+<p>
+
+<figure>
+	<img src="Chapters/knowOis11dictaat/figures/xnaframework.png" width="70%"/>
+	<figcaption>eerste XNA</figcaption>
+</figure>
+</p>
+
+<p>
+In het programma gebruikte je het keyword <code>using</code> om gebruik te maken van de mogelijkheden van het Framework.
+</p>
+<p>
+Om een component te gebruiken in Visual Studio ga je altijd op deze manier te werk. Het XNA framework heb je geïnstalleerd en daarbij werden de referentie aan VS toegevoegd.
+Net zoals het XNA framework aan Visual Studio 2010 is toegevoegd kun je een softwarecomponent toevoegen om de Wiimote te gebruiken. Deze component is te vinden op het Internet  genaamd WiiMoteLib.dll
+Hiervoor is er geen installatie nodig, maar je kunt met een rechtermuisklik op reference in het menuutje kiezen voor add reference. Hierna browse je naar de juiste file.
+</p>
+<p>
+De <em>Wiimote</em> gaat communiceren met je applicatie via <em>Bluetooth</em>. Het instellen van Bluetooth kun je ook overal op het Internet vinden. Google: Wiimote Bluetooth
+Ook zijn er verschillende testprogramma’s te vinden.
+</p>
+</section><section>
+<h4>0.0.7.3. XBOX 360</h4>
+<p>
+Bij de ISSD kun je ook een XBOX lenen om daar je XNA-applicatie op te draaien.
+In de C#/XNA programma is een kleine aanpassing nodig om de applicatie geschikt te maken voor de XBOX.
+Voer de volgende stappen uit om een game van je laptop naar de Xbox te porten:
+•	Rechtermuisknop klikken op je windowsproject
+•	Selecteer &quot;Create a Copy of Project for Xbox 360&quot;
+</p>
+<p>
+Zie uitgebreider http://msdn.microsoft.com/en-us/library/bb976061.aspx
+Even uitproberen. Je moet namelijk in een lan zitten, ook lid zijn van creatorclub enzo.
+</p>
+<p>
+ 
+</p></section></section><section>
+<h3>0.0.8. XNA en/of gaming bronnen</h3>
+<p>
+Let op: XNA wordt niet meer gebruikt voor OIS. Wij gebruiken MonoGame.
+</p>
+<p>
+Tutorials voor veelgebruikte gaming aspecten (let op: deze zijn gemaakt voor XNA 3.0 dus werken soms net iets anders)
+</p>
+<p>
+<a href="http://www.xnadevelopment.com/tutorials.shtml">http://www.xnadevelopment.com/tutorials.shtml</a>
+</p>
+<p>
+<a href="http://creators.xna.com">http://creators.xna.com</a>
+</p>
+<p>
+<a href="http://creators.xna.com/en-us/Academia">http://creators.xna.com/en-us/Academia</a>
+</p>
+<p>
+<a href="http://www.xbox.com/en-US/kinect">http://www.xbox.com/en-US/kinect</a>
+</p>
+<p>
+<a href="http://depts.washington.edu/cmmr/Research/XNA_Games/XNACS1WorkBook.html">http://depts.washington.edu/cmmr/Research/XNA_Games/XNACS1WorkBook.html</a>
+</p>
+<p>
+<a href="http://dxframework.org/">http://dxframework.org/</a>
+</p>
+<p>
+<a href="http://msdn2.microsoft.com/en-us/library/bb200104.aspx">Game Studio Express</a>
+</p>
+<p>
+<a href="http://www.academicresourcecenter.net/curriculum/pfv.aspx?ID=6878">Video Game programming</a>
+</p>
+<p>
+<a href="http://www.garagegames.com/products/torque/x/">http://www.garagegames.com/products/torque/x/</a>
+</p>
+<p>
+<a href="https://www.academicresourcecenter.net/curriculum/FacetMain.aspx?FT=Tag&TagList=3&ResultsTitle=Gaming%20and%20Graphics&ShowResults=1">https://www.academicresourcecenter.net/curriculum/FacetMain.aspx?FT=Tag&TagList=3&ResultsTitle=Gaming%20and%20Graphics&ShowResults=1</a>
+</p>
+<p>
+<a href="http://www.youtube.com/watch?v=6AKgH4On65A">http://www.youtube.com/watch?v=6AKgH4On65A</a>
+</p>
+<p>
+<a href="http://www.youtube.com/watch?v=c_LrVqI6StY">http://www.youtube.com/watch?v=c_LrVqI6StY</a>
+</p>
+<p>
+<a href="http://graphics.cs.columbia.edu/projects/goblin/">http://graphics.cs.columbia.edu/projects/goblin/</a>
+</p>
+<p>
+ 
+</p></section><section>
+<h3>0.0.9. XNA problemen oplossen</h3>
+<section>
+<h4>0.0.9.1. No suitable graphics card found</h4>
+<p>
+Het kan gebeuren dat XNA de volgende foutmelding geeft:
+</p>
+<p>
+Dit probleem is op te lossen door de instelling &quot;de volledige  HiDef API gebruiken&quot; die standaard aan staat te veranderen in &quot;Use Reach to access a limited API set ….&quot;.  Deze instelling is te vinden bij &quot;Project Properties&quot; op het tabblad &quot;XNA Game Studio&quot;.
+</p>
+</section><section>
+<h4>0.0.9.2. XNA programma kan niet worden uitgevoerd</h4>
+<p>
+Het gebruik hiervan op zogenaamde ‘N’ versies van windows 7 kan tot problemen leiden bij het gebruik van XNA. Voor meer info over ‘N’ versies van windows 7, zie: http://en.wikipedia.org/wiki/Windows_7_editions#Sub-editions
+N versies van windows 7 missen Windows Media Player en de daarbij horende codecs, door EU restricties. Gevolg hiervan is dat XNA programma’s die (bijvoorbeeld) WAV bestanden bevatten niet kunnen compileren.
+In plaats van een melding dat je WMP/codecs mist, krijg je bij het compileren een cryptische melding over een missende DLL die je, eenmaal gevonden, niet kunt toevoegen aan je project
+Oplossing voor dit probleem: Windows Media Player downloaden en installeren, zie:
+http://windows.microsoft.com/en-US/windows/downloads/windows-media-player
+(Deze linkt door naar deze link: http://www.microsoft.com/downloads/en/details.aspx?FamilyID=31017ed3-166a-4c75-b90c-a6cef9b414c4)
+
+</p></section></section>
+
+
+</section><section>
+<h2>4.2. Classes</h2>
+<p class="todo">Dit hoofdstuk wordt binnenkort ingevuld.</p>
+
+</section><section>
+<h2>4.3. Constructors</h2>
+<section>
+<h3>4.3.1. Opdrachten met constructors</h3>
+<p>
+Invaders, Galgje
+</p>
+
+</section></section><section>
+<h2>4.4. Exception Handling</h2>
+
+
+<table style="border: solid thin"><tr><td>De sleutel tot succes ligt in alle momenten</td>
+</tr>
+<tr><td>waarop je hebt gefaald. (Jean Marie Molina)</td>
+</tr>
+</table>
+
+
+<p>
+<code>FileNotFoundException</code>, <code>NullPointerException</code>, enzovoort. Al die fouten die jij ziet in de <code>Visual Studio debugger</code> ziet de gebruiker ook. Maar als de gebruiker ze ziet dan crasht zijn programma! Als software engineer dien je mogelijke exceptionele situaties te voorkomen. C# heeft hiervoor de keywords <code>try</code>, <code>catch</code> en <code>finally</code>.
+</p>
+<p>
+Regelmatig wil je de structuur van je code niet helemaal aanpassen aan exceptionele situaties die je (inderdaad) als een uitzondering wilt beschouwen. Een voorbeeld is wanneer je programma een <code>connectie</code> met een <code>database</code> nodig heeft, of <code>requests</code> naar internet stuurt: je wil dan niet elke keer checken of de connectie naar database of internet nog wel werkt, maar <sup>als</sup> de connectie verloren is gegaan dan moet je programma daar wel mee om kunnen gaan.  Je kunt dit doen door om je code een <code>try-catch-clause</code> te zetten. Het idee ziet er alsvolgt uit:
+</p>
+<figure><pre><code>... // code die verbinding maakt
+try {
+	// code die er van uit gaat dat de connectie werkt:
+	...
+	// als er tijdens het uitvoeren van deze code
+	// een exception optreedt springt C# meteen
+	// naar het vangnet hieronder dat bijvoorbeeld
+	// de gebruiker meldt dat de verbinding
+	// verbroken is en dat ie het bijvoorbeeld
+	// nog eens moet proberen.
+
+} catch(Exception exc)
+{
+	...
+	// code die uitgevoerd wordt wanneer er
+	// een probleem optreedt!
+
+}</code></pre><figcaption></figcaption></figure>
+
+
+
+<section>
+<h4>0.0.0.1. Andere bronnen</h4>
+
+<p>
+<a href="http://www.csharp-station.com/Tutorial/CSharp/Lesson15">Exceptions at CSharp-station</a>
+</p>
+<p>
+<a href="https://msdn.microsoft.com/en-us/library/ms173162.aspx">Exceptions at MSDN</a>
+
+</p></section>
+
+</section><section>
+<h2>4.5. Graphics</h2>
+<p>
+Met de Windows .NET-grafiekbibliotheek kun je lijnen, ellipsen, plaatjes, enz. tekenen. Geschikt voor games of speciale user interfaces.
+</p>
+<section>
+<h4>0.0.0.1. Graphics-objecten</h4>
+
+<p>
+Kleuren: <code>class</code> <code>Color</code>
+</p><figure><pre><code>Color myColor;
+myColor = Color.Aquamarine;
+yColor = Color.Tomato;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Pennen: <code>class Pen</code>
+</p>
+
+<p>
+Brushes: <code>class SolidBrush</code>, <code>HatchBrush</code>, <code>LinearGradientBrush</code>, ...
+</p>
+</section><section>
+<h4>0.0.0.2. Lijnen tekenen</h4>
+<p>
+Om een lijn te tekenen:
+</p>
+<p>
+Maak een instantie van een Pen-klasse en zet een paar properties:
+</p><figure><pre><code>Pen myPen = new Pen(Color.Red);
+myPen.Width = 5;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Gebruik het graphics-object om te tekenen. Maak een <code>Paint Event Handler</code> aan. De <code>parameter</code> <strong>e</strong> bevat informatie over het zogenaamde <code>Grapics object</code>:
+</p><figure><pre><code>Graphics g = e.Graphics;</code></pre><figcaption></figcaption></figure>
+
+<p>
+Teken een lijn:
+</p><figure><pre><code>DrawLine(myPen, 1, 1, 45, 65);</code></pre><figcaption></figcaption></figure>
+
+</section><section>
+<h4>0.0.0.3. Methoden van het <strong>graphics</strong> object</h4>
+<ul>
+<li><code>DrawLine(...)</code></li>
+<li><code>DrawBezier(...)</code></li>
+<li><code>DrawEllipse(...)</code></li>
+<li><code>DrawPolygon(...)</code></li>
+<li><code>DrawRectangle(...)</code></li>
+</ul>
+</section>
+</section><section>
+<h2>4.6. Properties</h2>
+<a id="cha:knowProperty"></a>
+
+<p>
+Properties gebruik je om toegang te verlenen tot afgeschermde (private) fields. Stel, je hebt een Stopwatch klasse, dan zou deze een private field seconds kunnen hebben. Wil je dat dit field alleen gelezen kan worden door andere code, kun je een property hiervoor aanmaken. De conventie is dat fields geschreven worden met kleine letters; properties worden begonnen met een hoofdletter. Zie onderstaand voorbeeld:
+</p>
+
+<figure><pre><code>class Stopwatch
+{
+    private int seconds;                // Field
+    public int Seconds                  // Property
+    {
+        get { return seconds; }         // Getter
+    }
+}
+
+Stopwatch sw = new Stopwatch();
+int tijd = sw.seconds;                  // Mag niet
+int tijd = sw.Seconds;                  // Mag wel (hoofdletter)
+sw.Seconds = 10;                        // Mag niet (geen setter)</code></pre><figcaption></figcaption></figure>
+
+<p>
+Een andere mogelijkheid is om een field op een bepaalde manier in te stellen. We zouden bijvoorbeeld de stopwatch instelbaar kunnen maken met minuten:
+</p>
+<figure><pre><code>class Stopwatch
+{
+    private int seconds;                // Field
+    public int Seconds                  // Property
+    {
+        get { return seconds; }         // Getter
+    }
+    public int Minutes                  // Property
+    {
+        get { return seconds / 60 };    // Getter
+        set { seconds = value * 60 };   // Setter
+    }
+}
+
+Stopwatch sw = new Stopwatch();
+sw.Minutes = 5;                         // Instellen in minuten
+int tijd = sw.Seconds;                  // Uitlezen in seconden (300)</code></pre><figcaption></figcaption></figure>
+
+
+
+
+<section>
+<h4>0.0.0.1. Externe bronnen</h4>
+
+<p>
+<a href="http://csharp.net-tutorials.com/classes/properties/">CSharp.Net tutorials</a>
+</p>
+<p>
+<a href="https://www.codeproject.com/Articles/1006217/Diving-into-OOP-Day-Properties-in-Csharp-A-Practic">CodeProject</a>
+</p>
+<p>
+<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/aa370889(v=vs.85).aspx">MSDN</a>
+</p>
+
+<p>
+Wil je meer lezen over properties dan vind je op MSDN een goede uitleg (negeer voor nu het uitgebreidere voorbeeld onder de kop Example).
+<a href="http://msdn.microsoft.com/en-us/library/w86s7x04.aspx">MSDN over properties</a>
+
+</p></section>
+</section><section>
+<h2>4.7. Private</h2>
+<a id="cha:knowPrivatePublic"></a>
+
+<section>
+<h3>0.0.1. Private</h3>
+<ul>
+<li><em>Information hiding</em>: <code>variabelen</code> binnen een <code>class</code> zijn altijd <code>private</code>.</li>
+<li>Voordeel: beter onderhoudbare software, programmeurs kunnen vanuit andere <code>classes</code> niet zomaar in de <em>internals</em> van jouw <code>class</code>, maar gebruiken de daarvoor bedoelde <code>methods</code> en/of <code>properties</code>. </li>
+</ul>
+
+
+</section><section>
+<h3>0.0.2. Methods </h3>
+<p>
+<code>Methods</code> die van buitenaf aanroepbaar moeten zijn zijn dus typisch <code>public</code>. Als het <code>methodes</code> betreft die alleen bedoeld zijn voor gebruik binnen de <code>class</code> kun je ze beter <code>private</code> maken. 
+</p>
+</section><section>
+<h3>0.0.3. Properties</h3>
+<p>
+Een property definieert vaak een manier om de waarde van een veld op te vragen of zelfs te veranderen. Het opvragen kan vaak <code>public</code> zijn, maar het is bij de meeste velden niet de bedoeling dat de waarde van buitenaf veranderd kan worden. 
+</p>
+
+<figure><pre><code>class Persoon
+{
+   // Maak Velden private
+   private string naam;
+   private int leeftijd;
+
+   public Persoon(string Naam, int Leeftijd)
+   {
+      this.naam = Naam;
+      this.leeftijd = Leeftijd;
+   }
+
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Het is nu niet mogelijk van buitenaf de waarde van een <code>veld</code> als <code>leeftijd</code> te veranderen:  
+</p>
+<figure><pre><code>Persoon persoon = new Persoon(&quot;Pietje Puk&quot;);
+int leeftijd = persoon.leeftijd;  // dit werkt dus NIET!</code></pre><figcaption></figcaption></figure>
+
+<p>
+Uiteraard kan er in <code>class</code> <em>Persoon</em> een <code>methode</code> gemaakt worden die de waarde van <code>veld</code> <em>leeftijd</em> teruggeeft, een zogenaamde <em>get-method</em>: 
+</p>
+<figure><pre><code>public int GetLeeftijd()
+{
+   return this.leeftijd;
+}</code></pre><figcaption></figcaption></figure>
+<p>
+zodat de leeftijd opgevraagd kan worden: 
+</p><figure><pre><code>int leeftijd = persoon.GetLeeftijd();</code></pre><figcaption></figcaption></figure>
+<p>
+Merk op dat de <em>leeftijd</em> van buitenaf dus niet veranderd kan worden, maar alleen opgevraagd! 
+</p>
+</section><section>
+<h3>0.0.4. Waarom?</h3>
+<p>
+Wat is hier nu het voordeel van? Nou, binnen een jaar zal de ontwikkelaar van deze <code>class</code> de eerste klachten krijgen dat niet de leeftijden niet goed berekend worden, aangezien dat de <em>leeftijd</em> geen vaste waarde is: op het moment dat de <em>persoon</em> jarig is moet de waarde opgehoogd worden. 
+In dit geval kun je zien dat het verstandiger is de <em>geboortedatum</em> van de persoon op te slaan (die verandert namelijk niet) en dan wordt bij het opvragen van de <em>leeftijd</em> de goede waarde berekend. 
+De programmeur kan nu zonder problemen de <code>class</code> veranderen: 
+</p><figure><pre><code>class Persoon
+{
+   // velden
+   private string naam;
+   private DateTime geboortedatum;
+
+   public int GetLeeftijd()
+   {
+      int leeftijd = ... // voeg hier code toe om de leeftijd te berekenen mbv de geboortedatum. 
+      return leeftijd;
+   }</code></pre><figcaption></figcaption></figure>
+<p>
+Doordat het veld <em>leeftijd</em> <code>private</code> was kan de programmeur dit aanpassen zonder dat er elders problemen ontstaan in code die hier gebruik van maakt, externe code roept namelijk de methode <em>GetLeeftijd()</em> aan en die zal na de wijziging zonder problemen werken. 
+</p>
+</section><section>
+<h3>0.0.5. Encapsulation</h3>
+<p>
+Stel dat er een bug zit in (de waarde van velden van) een bepaalde <code>class</code>, dan is het ook prettig te weten dat (in geval van <code>private</code> velden) de bug ergens in de <code>class</code> moet zitten. Dit wordt <code>Encapsulaton</code> genoemd: een stukje gedrag van een programma wordt afgeschermd. Hierdoor wordt het makkelijker een deel van je programma te hergebruiken. 
+</p>
+<p>
+Encapsulatie betekent kortweg dat een groep fields, methodes en overige eigenschappen die gezien worden als een enkel, afgebakende eenheid of object. Dit klinkt wat droog, dus een andere bewoording die mogelijk duidelijker is door encapsulatie te zien als het vermogen van een klasse om fields en methodes die niet interessant zijn voor anderen, te verbergen. Focus voor nu vooral op de public en private eigenschappen: de overigen komen pas later in het curriculum aan bod.
+</p>
+<p>
+De beste reden om bepaalde onderdelen van je klasse af te schermen is dat je code makkelijker in het gebruik wordt. Klassen gebruiken private fields om hun toestand bij te houden; hoeveel levens heb ik nog, hoe snel mag ik bewegen, et cetera. Deze informatie is voor andere code niet per sé interessant, maar wel essentieel voor de werking van de klasse. Als iedereen zomaar die fields aan zou kunnen passen, wordt de werking van je klasse een stuk onbetrouwbaarder en willekeuriger: wanneer je zelf de enige bent die het aantal levens aan kunt passen, weet je ook precies waar in je code het voor kan komen dat je levens op 0 worden gezet. Dit voordeel valt weg als iedereen het aantal levens aan kan passen.
+</p>
+
+
+
+</section><section>
+<h3>0.0.6. External References</h3>
+
+<p>
+<a href="https://softwareengineering.stackexchange.com/questions/143736/why-do-we-need-private-variables">Over private</a> 
+</p>
+<p>
+<a href="http://www.techopedia.com/definition/3787/encapsulation-c">Techopedia</a>
+</p>
+
+
+</section>
+</section><section>
+<h2>4.8. Separation of GUI and class code</h2>
+<a id="cha:knowGuiSepararation"></a>
+
+<p>
+Zorg ervoor dat je geen user interfacecode (zoals bijv. MessageBoxen) in je klassen hebt staan. Gebruik exception handling waar nodig, maar ook niet onnodig.
+</p>
+<p>
+Werk met <code>lijsten</code> (van <code>objecten</code>, dus niet van <code>strings</code>) en gebruik <code>casting</code> om een door de gebruiker geselecteerd <code>object</code> weer te pakken te krijgen. Elke <code>class</code> heeft een <code>ToString()</code> zodat <code>objecten</code> goed getoond worden in de <code>UI</code>.
+
+</p>
+</section><section>
+<h2>4.9. File Handling</h2>
+<section>
+<h3>0.0.1. Terminologie</h3>
+
+<ul>
+<li>Wat is de betekenis van de volgende woorden?<ul>
+<li>File, Bestand</li>
+<li>Directory, Pad, Folder, Map</li>
+<li>UNC</li>
+<li>URL</li>
+</ul>
+</li>
+<li>Hoe ziet een pad er uit in Windows Verkenner, Command Prompt, Linux, Mac OSX?</li>
+</ul>
+
+
+</section><section>
+<h3>0.0.2. File handling klassen</h3>
+<p>
+Het .NET framework biedt een aantal klassen* om met bestanden te kunnen werken:
+</p><ul>
+<li>File</li>
+<li>Directory</li>
+<li>DirectoryInfo</li>
+<li>Path</li>
+</ul>
+
+</section><section>
+<h3>0.0.3. Andere bronnen</h3>
+<p>
+<a href="https://msdn.microsoft.com/en-us/library/2kzb96fk.aspx">MSDN</a>
+
+</p></section>
+
+</section><section>
+<h2>4.10. Enum</h2>
+<a id="cha:Enum"></a>
+<section>
+<h3>0.0.1. Definitie van Enum</h3>
+<ul>
+<li>Enumeraties of kortweg enum’s stellen je in staat items op een gestructureerde, geordende manier voor te stellen.</li>
+<li>Een enumeratie zorgt ervoor dat de elementen aan te spreken zijn met een naam, maar worden intern genummerd (standaard vanaf 0).</li>
+<li>Met een enumeratie heb je onmiddellijk de Visual Studio Intellisense ter beschikking en behoed je jezelf voor tikfouten en logische fouten.</li>
+</ul>
+
+</section><section>
+<h3>0.0.2. Voorbeelden</h3>
+
+<figure><pre><code>enum Dag
+{
+   Zondag,
+   Maandag,
+   Dinsdag,
+   Woensdag,
+   Donderdag,
+   Vrijdag,
+   Zaterdag
+}</code></pre><figcaption></figcaption></figure>
+
+
+<p>
+Dan is mogelijk:
+</p><figure><pre><code>Dag d;
+d = Dag.Woensdag;</code></pre><figcaption></figcaption></figure>
+</section>
+
+</section><section>
+<h2>4.11. Override ToString()</h2>
+<a id="cha:knowOverrideToString"></a>
+<figure><pre><code>class Persoon {
+
+   // Field
+   private string naam;
+
+   // Property
+   public string Naam
+   {
+      get { return this.naam; }
+   }
+
+   // ctor
+   public Persoon(string naam)  
+   {
+      this.naam = naam;
+   }
+
+   public override string ToString()
+   {
+      return this.Naam;
+   }
+}</code></pre><figcaption></figcaption></figure>
+
+
+<p>
+Tip bij het programmeren: zet altijd je eigen objecten in de user interface. Hiermee wordt bedoeld dat je objecten zelf in de UI zet, geen strings of andere variabelen. Bijvoorbeeld om een Persoon-object aan een listbox toe te voegen:
+</p><figure><pre><code>listBox1.Items.Add(new Persoon(&quot;Sjakie&quot;));</code></pre><figcaption></figcaption></figure>
+
+<p>
+Gebruik casting om het object uit een UI-control te halen:
+</p><figure><pre><code>Persoon p = (Persoon)listBox1.Items[2];</code></pre><figcaption></figcaption></figure>
+
+<p>
+Programmeer een <code>ToString()</code>-methode in al je <code>classes</code> om te zorgen dat je altijd een goede tekstuele representatie van je objecten hebt.
+
+</p>
+
+</section><section>
+<h2>4.12. XAML</h2>
+<table style="border: solid thin"><tr><td>A good programmer is someone who always looks</td>
+</tr>
+<tr><td>both ways before crossing a one-way street</td>
+</tr>
+</table>
+
+<p>
+Het leerdoel XAML van OIS12 houdt in dat je een user interface voor WPF of Windows Universal kunt maken.
+</p>
+<p>
+Je kunt dit doen vanuit de designer (Shift+F7) maar ook rechtstreeks in XAML-code. Dit ziet er in het begin misschien eng uit, maar dat went snel.
+</p>
+<p>
+Tip: als je googelt zet dan het woord &quot;WPF&quot; erbij omdat WPF de eerste techniek was waar XAML bij werd toegepast waardoor er nog steeds veel info op internet over te vinden is.
+</p>
+<p>
+Liefhebbers kunnen de XAML-editor gebruiken, maar je kunt ook vanuit het design werken. Als je gaat googlen zet dan de zoekterm <em>WPF</em> erbij.
+</p>
+
+<section>
+<h3>0.0.1. Trucs:</h3>
+
+<p>
+<a href="http://stackoverflow.com/questions/34088737/visual-studio-2015-update-1-xaml-designer-not-showing-for-uwp">Ik zie geen designer</a>
+</p>
+<p>
+<a href="http://www.dailyfreecode.com/code/grid-layout-xaml-212.aspx">Tutorial grid-layout (goede manier om controls te alignen)</a>
+</p>
+<p>
+<a href="https://msdn.microsoft.com/en-us/library/ms745683%28v=vs.110%29.aspx">Advanced topic: styles</a>
+</p>
+
+</section><section>
+<h3>0.0.2. Scheiding GUI en code</h3>
+<p>
+Eerder is al aangegeven dat het zaak is je code goed gescheiden te houden van de <code>user interface</code> (<code>Forms</code>). Om te controleren of je dat echt goed hebt gedaan ga je nu een nieuw project maken waarbij je alleen de user interface van je systeem gaat wijzigen.
+</p>
+<p>
+Maak een <code>Windows Universal app</code> aan en maak opnieuw een <code>User Interface</code> van een eerder gemaakt programma. Je bestaande klassen met code ga je hergebruiken.
+
+</p></section>
+
+</section><section>
+<h2>4.13. External Resources</h2>
+<a id="sec:ExternalResources"></a>
+
+</section></section><section>
+<h1>5. Challenges</h1>
+
+<section>
+<h2>5.1. Challenge BattleSim</h2>
+<a id="cha:challengeBattleSim"></a>
+<section>
+<h3>0.0.1. Voorkomende leerdoelen</h3>
+
+<p>
+<strong>file handling</strong>,
+<strong>exception</strong>,
+<strong>private/public</strong>,
+<strong>casting</strong>,
+<strong>list en foreach</strong>,
+<strong>UI separation</strong>.
+</p>
+<p>
+Zie Chapter 
+<a href="#cha:ois12learninggoals"></a> 
+voor meer informatie over deze leerdoelen.
+</p>
+</section><section>
+<h3>0.0.2. Vereiste voorkennis</h3>
+<p>
+OIS11. 
+</p></section><table style="border: solid thin"><tr><th>Datum</th>
+<td>Week 11/12</td>
+</tr>
+<tr><th>Versie</th>
+<td>1 - Inge van Engeland</td>
+</tr>
+<tr><th>Leerdoelen</th>
+<td>Class, Property, Constructor</td>
+</tr>
+</table>
+
+
+<section>
+<h3>0.0.1. Inleiding</h3>
+
+<p>
+In het spel BattleSim kun je met twee spelers tegen elkaar vechten. In deze versie is de linkerspeler een Knight en de rechterspeler een Ranger. Beide spelers hebben elk 100 hitpoints.
+</p>
+<p>
+Het is een turn-based spel, dus om beurten vallen de spelers elkaar aan. De sterkte van de aanval ligt tussen de 0 (een misser) en de 30. Als de speler een klap van meer dan 25 geeft, dan heb je een “Critical hit”. Op het moment dat het aantal hitpoints 0 of minder is, dan heeft die speler helaas verloren.
+</p>
+</section><section>
+<h3>0.0.2. Opdracht</h3>
+<p>
+Programmeer de BattleSim. Figuur
+<a href="#fig:BattleSim">0.1</a> 
+is een voorbeeld van hoe het scherm eruit kan zien.
+</p>
+<p>
+<a id="fig:BattleSim"></a>
+<figure>
+	<img src="Chapters/challengeBattleSim/figures/BattleSim.png" width="80%"/>
+	<figcaption>0.1. battlesim</figcaption>
+</figure>
+</p>
+
+<p>
+Opdracht BattleSim
+</p>
+<ul>
+<li>Maak een klasse Speler, deze heeft een naam en een aantal hitpoints.</li>
+<li>Maak de properties en de constructor voor deze klasse.</li>
+<li>De klasse speler heeft een methode om schade te ontvangen en een methode om schade te geven.</li>
+<li>Een aanval geeft 0-30 schade.</li>
+<li>Als de aanval 0 is, is het een misser (geef een bericht dat het een misser was). Gebruik hiervoor een exception.</li>
+<li>Als de aanval 25+ is, dan is het een “Critical Hit” (geef een bericht). Gebruik hiervoor een exception.</li>
+<li>Na elke aanval worden de hitpoints bijgewerkt op het scherm.</li>
+<li>Als het aantal hitpoints 0 of minder is, dan heeft die speler verloren (gebruik een exception)</li>
+<li>De karakters om beurten aanvallen.</li>
+<li>Als de ene speler aan de beurt is, kan de andere speler niet op de “Attack” knop klikken.</li>
+</ul>
+
+
+</section><section>
+<h3>0.0.3. Extra</h3>
+<p>
+Verzin functies om je BattleSim uit te breiden. Denk bijvoorbeeld aan:
+</p><ul>
+<li>Plaatje dat verandert als de speler gewonnen / verloren heeft</li>
+<li>Startscherm waarin je een karakter kunt kiezen en een naam kunt geven</li>
+<li>Een “Explore” knop erbij, waarmee je bijvoorbeeld een health potion kunt vinden.</li>
+<li>Hou de hitpoints bij in een Progress Bar.</li>
+<li>Wapens, armor etc.</li>
+</ul>
+</section>
+
+</section><section>
+<h2>5.2. Challenge Cube Graphic</h2>
+
+<section>
+<h3>0.0.1. The Cube</h3>
+
+<section>
+<h4>0.0.1.1. Teken een kubus als wireframe in een panel. Als de gebruiker het form vergroot, verkleint of minimaliseert en weer maximaliseert dan blijft de kubus zichtbaar.</h4>
+
+<p>
+<a id="fig:cube"></a>
+<figure>
+	<img src="Chapters/challengeCube/figures/cube.png" width="50%"/>
+	<figcaption>0.1. cube</figcaption>
+</figure>
+</p>
+</section><section>
+<h4>0.0.1.2. Maak de voorste zijde van de kubus rood, dus vul het op met rood.</h4>
+</section></section>
+
+</section><section>
+<h2>5.3. Challenge Exception Handling</h2>
+<a id="cha:challengeExceptionHandling"></a>
+
+<p>
+Als startmateriaal is het programma Naamgenerator beschikbaar. Open deze solution en bekijk de code eens.
+Het programma genereert een willekeurige naam uit een lijst van beschikbare namen en laat die naam op het scherm zien. De lijst van beschikbare namen staat in het bestand Namen.txt. Het programma leest dit bestand uit.
+</p>
+
+<p>
+
+<figure>
+	<img src="Chapters/challengeExceptionHandling/figures/naamgenerator.png" width="70%"/>
+	<figcaption>naamgenerator</figcaption>
+</figure>
+</p>
+
+<section>
+<h3>0.0.1. Opdracht 1</h3>
+
+<p>
+Voeg C#-code toe die alle excepties van het programma zoals bijvoorbeeld de IndexOutOfRangeException en excepties die te maken hebben met bestanden/netwerk opvangen en een duidelijke foutmelding aan de gebruiker laten zien of (nog beter) de fout oplossen zonder dat de gebruiker het ziet.
+</p>
+</section><section>
+<h3>0.0.2. Opdracht 2</h3>
+
+<p>
+Breidt het programma uit zodat er naar keuze 1 of 2 namen worden geselecteerd. De gebruiker moet van te voren kiezen of hij 2 namen of 1 naam wil zien. Voeg user interface controls toe, en vervang bestaande controls naar keuze.
+
+</p></section>
+
+</section><section>
+<h2>5.4. Challenge Ms PacMan</h2>
+<a id="cha:challengeMsPacman"></a>
+<section>
+<h3>0.0.1. Voorkomende leerdoelen</h3>
+
+<p>
+<strong>file handling</strong>,
+<strong>exception</strong>,
+<strong>private/public</strong>,
+<strong>casting</strong>,
+<strong>list en foreach</strong>,
+<strong>UI separation</strong>.
+</p>
+<p>
+Zie Chapter 
+<a href="#cha:ois12learninggoals"></a> 
+voor meer informatie over deze leerdoelen.
+</p>
+</section><section>
+<h3>0.0.2. Vereiste voorkennis</h3>
+<p>
+OIS11. 
+</p></section>
+<p>
+
+<figure>
+	<img src="Chapters/challengeMsPacman/figures/pacmanboard.png" width="60%"/>
+	<figcaption>pacman</figcaption>
+</figure>
+</p>
+<section>
+<h3>0.0.1. De opdracht</h3>
+<p>
+Begin jaren tachtig was <strong>Ms. Pac-man</strong> een populaire game. Maak een <code>App(lication)</code> met een <code>form</code> dat helemaal zwart is en ga dan aan de slag met het tekenen van een aantal elementen uit Pac-man, om te oefenen met <code>Graphics</code>.
+</p>
+
+<p>
+Teken op het veld een witte stip. Dit is een vierkant gevuld met witte kleur die bestaat uit 4 pixels.
+</p>
+<p>
+Teken op het zwarte veld een grote pil. Een grote pil is vorm die op te vatten is als een 8-hoek of kan opgebouwd worden uit een aantal andere vormen. Zie figuur
+<a href="#fig:pil">0.1</a>.
+</p>
+<p>
+<a id="fig:pil"></a>
+<figure>
+	<img src="Chapters/challengeMsPacman/figures/pacmanbigpill.png" width="30%"/>
+	<figcaption>0.1. pil</figcaption>
+</figure>
+</p>
+<p>
+Teken een muur zoals die op het speelveld te zien zijn, bestaande uit een horizontale balk, met afgeronde hoeken. De rand van de balk is rood, de binnenkant is gevuld met een lichtrode/bijna roze kleur. Zie figuur
+<a href="#fig:bar">0.2</a>
+</p>
+<p>
+<a id="fig:bar"></a>
+<figure>
+	<img src="Chapters/challengeMsPacman/figures/pacmanbar.png" width="30%"/>
+	<figcaption>0.2. muur</figcaption>
+</figure> .
+
+</p></section>
+
+</section><section>
+<h2>5.5. Challenge File Handling</h2>
+<a id="cha:challengeFileHandling"></a>
+<section>
+<h3>0.0.1. Voorkomende leerdoelen</h3>
+
+<p>
+<strong>file handling</strong>,
+<strong>exception</strong>,
+<strong>private/public</strong>,
+<strong>casting</strong>,
+<strong>list en foreach</strong>,
+<strong>UI separation</strong>.
+</p>
+
+</section><section>
+<h3>0.0.2. Vereiste voorkennis</h3>
+<p>
+OIS11.
+</p></section>
+
+
+<section>
+<h4>0.0.0.1. Opdracht</h4>
+<p>
+Bestudeer de C#-klassen van het .NET-framework waar mee je kunt werken met bestanden, folders, mappen enz. C# kent allerlei methoden om tekstbestanden te lezen en te schrijven, bestanden te verplaatsen, folders aan te maken, enz.
+Werk vervolgens een aantal van onderstaande casussen uit om te oefenen met file handling en vraag feedback aan je docent:
+</p>
+
+</section><section>
+<h4>0.0.0.2. De Opdracht</h4>
+<p>
+Kies in overleg met je docent alle of enkele van de onderstaande casussen uit om te oefenen met file handling.
+</p>
+<section>
+<h5>0.0.0.2.1. Casus 0 - Analyse</h5>
+<p>
+Een klasse is te zien als een structuur in C# die een aantal methoden heeft die bij elkaar horen. Schrijf een kort document waar je in beschrijft welke functionaliteiten de volgende klassen in het .NET-framework hebben. Beschrijf wat je als C#-programmeur met deze klassen kunt doen, geef een paar korte codevoorbeelden.
+</p><ul>
+<li>File</li>
+<li>Directory</li>
+<li>DirectoryInfo</li>
+<li>Path</li>
+</ul>
+
+</section><section>
+<h5>0.0.0.2.2. Casus 1 - Tekstbestandzoeker</h5>
+<p>
+Schrijf een Windows Forms C#-programma dat voldoet aan de volgende requirements:
+</p><ol><li>Een user interface met minimaal 2 listboxen.</li>
+<li>Na het opstarten van de app wordt in listbox1 een lijst van alle folders op de root (C:) van je harde schijf getoond.</li>
+<li>Als ik op een folder (item in de listbox) klik dan verschijnt er in de andere listbox een lijst van alle bestanden met extensie .TXT.</li>
+</ol>
+
+
+</section><section>
+<h5>0.0.0.2.3. Casus 1a - For-lus</h5>
+<p>
+Breid de applicatie van casus 1 uit met een for-lus die alle bestanden die met de letter a beginnen NIET laat zien (skipt) in de tweede listbox.
+</p>
+
+</section><section>
+<h5>0.0.0.2.4. Casus 2 - Tekstverwerker</h5>
+<p>
+Maak een applicatie waarmee tekstbestanden kunnen worden bewerkt. De minimale user interface is een tekstveld, een Opslaan-knop en een Openen-knop.
+</p><ol><li>De gebruiker kan vanuit een Windows Forms user interface op een nette manier een tekstbestand selecteren vanuit zijn computer.</li>
+<li>Na een druk op de Openen-knop wordt de volledige inhoud van het bestand dat de gebruiker heeft geselecteerd getoond in een multiline tekstveld. De gebruiker kan desgewenst de tekst in het veld wijzigen.</li>
+<li>Na een druk op de Opslaan-knop wordt de tekst die op dat moment in het tekstveld staat opgeslagen in het eerder geselecteerde bestand.</li>
+</ol>
+
+
+</section><section>
+<h5>0.0.0.2.5. Casus 3 - Word light</h5>
+<ol><li>Maak casus 1 en casus 2.</li>
+<li>Maak een derde applicatie die de functionaliteit van zowel casus 1 als casus 2 bevat. Maak hierbij gebruik van een tab-control waarbij de gebruiker op de eerste tab een bestand kan uitkiezen en op de tweede tab het bestand kan bewerken.</li>
+</ol>
+
+
+</section><section>
+<h5>0.0.0.2.6. Casus 4 - Fruit-generator</h5>
+<ol><li>Laat de applicatie een bestand met de naam &quot;fruit.txt&quot; aanmaken.</li>
+<li>Laat de applicatie op 5 regels de teksten &quot;banaan&quot;, &quot;sinaasappel&quot;, &quot;kiwi&quot;, &quot;mandarijn&quot; en &quot;aardbei&quot; wegschrijven. Open het bestand in Windows Kladblok om te kijken of je applicatie goed werkt.</li>
+<li>Breidt de applicatie uit zodanig dat ze een melding geeft als het bestand &quot;fruit.txt&quot; al bestaat.</li>
+</ol>
+
+
+</section><section>
+<h5>0.0.0.2.7. Casus 5 - Mijn computer</h5>
+<p>
+Maak een applicatie die alle schijven van je computer laat zien (zoals Windows Verkenner dat kan) in een eenvoudige listbox. Zie
+<a href="#fig:mijnComputer">0.1</a>
+</p>
+
+<p>
+<a id="fig:mijnComputer"></a>
+<figure>
+	<img src="Chapters/challengeFileHandling/figures/mijnComputer.png"/>
+	<figcaption>0.1. Mijn Computer.</figcaption>
+</figure>
+</p>
+</section><section>
+<h5>0.0.0.2.8. Casus 5a</h5>
+<p>
+Voeg aan de Mijn Computer-applicatie de volgende functionaliteiten toe:
+</p><ul>
+<li>Mogelijkheid om een bestand te kopiëren naar een andere locatie</li>
+<li>Mogelijkheid om een bestand te hernoemen</li>
+</ul>
+
+
+</section><section>
+<h5>0.0.0.2.9. Casus 5b (verdieping)</h5>
+<p>
+Toon tijdens het kopiëren van een bestand (zie Casus 5a) een progress bar die aangeeft hoe lang de kopieeractie nog duurt.
+</p>
+
+</section><section>
+<h5>0.0.0.2.10. Casus 6 - Zoek in bestand</h5>
+<p>
+Maak een applicatie die een willekeurig door de gebruiker ingevuld woord kan opzoeken in een bestand. Toon het regelnummer in het bestand waar het woord voorkomt op het scherm.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</section></section>
+
+</section><section>
+<h2>5.6. Challenge Iedereen kan Schilderen</h2>
+<a id="cha:challengeIedereenKanSchilderen"></a>
+<section>
+<h3>0.0.1. Leerdoelen</h3>
+
+<p>
+Met deze opdracht kun je laten zien dat je File Handling, Exception Handling en Graphics binnen één applicatie kunt programmeren.
+</p><ul>
+<li>Je kunt vanuit een specificatie een programma schrijven dat werkt met de diverse functies van de Windows GDI (graphics).</li>
+<li>Je moet vanuit een specificatie een C#-programma kunnen schrijven waarmee tekstbestanden kunnen worden ingelezen en worden geschreven.</li>
+<li>Je moet op een correcte manier excepties in je C#-programma kunnen afhandelen.</li>
+</ul>
+
+
+</section><section>
+<h3>0.0.2. Casus 1 - Iedereen kan schilderen</h3>
+
+<p>
+Schrijf een Windows Forms C#-programma dat een tekstbestand uitleest waar graphics-commando's in staan. Het programma gaat vervolgens al die commando's uitvoeren. Een commando in het tekstbestand is een instructie waarmee jouw programma cirkels en lijnen mee kan tekenen.
+</p>
+<p>
+Voorbeeld van de inhoud van het tekstbestand:
+</p><figure><pre><code>cirkelR
+lijn
+lijn
+cirkelR
+cirkelB</code></pre><figcaption></figcaption></figure>
+
+<p>
+Als de gebruiker met jouw programma bovenstaand bestand inleest dan zullen er een rode cirkel, een lijn, nog een lijn, nog een rode cirkel en een blauwe cirkel worden getekend.
+</p>
+<p>
+De lijnen en cirkels verschijnen op willekeurige posities op het scherm.
+</p>
+<p>
+Mogelijke commando's: lijn, cirkelR, cirkelB.
+</p>
+<section>
+<h4>0.0.2.1. Functionele requirements</h4>
+<ul>
+<li>De gebruiker moet met een standaard Windows dialoog (tip: gebruik de OpenFileDialog uit de Toolbox van Visual Studio) een tekstbestand met de commando's kunnen openen.</li>
+<li>De lijnen en cirkels verschijnen op willekeurige posities op het scherm.</li>
+<li>De C#-code maakt gebruik van exceptiehandling om foutmeldingen met bestanden te voorkomen.</li>
+</ul>
+
+</section></section><section>
+<h3>0.0.3. Casus 1a - Advanced painter</h3>
+
+<p>
+Breid het programma van casus 1 uit zodat de gebruiker:
+</p><ul>
+<li>Meerdere bestanden tegelijk kan openen.</li>
+<li>Meer commando's kan gebruiken, bijvoorbeeld om groene driehoeken en teksten te tekenen.</li>
+</ul>
+
+</section><section>
+<h3>0.0.4. Casus 2 - Snake</h3>
+
+<p>
+Snake is een tekenprogramma waarmee op een snelle manier lijnen kunnen worden getrokken.
+</p>
+<p>
+Schrijf een Windows Forms C#-programma dat voldoet aan de volgende requirements:
+</p><ul>
+<li>Als de gebruiker op de muisknop klikt dan wordt de cursor-positie (x,y-coordinaat) van dat moment opgeslagen in twee variabelen x en y.</li>
+<li>Als de gebruiker de muis beweegt en dan op een andere positie nog een keer klikt dan wordt er een lijn getrokken van het eerste punt naar het tweede punt.</li>
+</ul>
+
+</section><section>
+<h3>0.0.5. Casus 2a - Snake Pro</h3>
+
+<p>
+Breidt het programma van casus 2 uit met de volgende functionaliteit:
+</p><ul>
+<li>Mogelijkheid om vierkanten en/of rechthoeken te tekenen. De gebruiker selecteert met een radiobutton van te voren wat hij wil tekenen.</li>
+</ul>
+</section>
+</section><section>
+<h2>5.7. Challenge Super Galgje</h2>
+<a id="cha:challengeSupergalgje"></a>
+<p>
+<section>
+<h3>0.0.1. Voorkomende leerdoelen</h3>
+
+<p>
+<strong>file handling</strong>,
+<strong>exception</strong>,
+<strong>private/public</strong>,
+<strong>casting</strong>,
+<strong>list en foreach</strong>,
+<strong>UI separation</strong>.
+</p>
+<p>
+Zie Chapter 
+<a href="#cha:ois12learninggoals"></a> 
+voor meer informatie over deze leerdoelen.
+</p>
+</section><section>
+<h3>0.0.2. Vereiste voorkennis</h3>
+<p>
+OIS11. 
+</p></section>
+ 
+</p><section>
+<h3>0.0.1. Super-galgje</h3>
+
+<p>
+Galgje is een spel waarbij een speler het woord moet raden dan de computer in gedachten heeft. Opdracht: schrijf galgje en maak gebruik van de object georiënteerde mogelijkheden van <code>C#</code>.
+</p><ol><li>Te programmeren <code>classes</code>: <code>Woord</code> en <code>Form1</code> (form).</li>
+<li>Te programmeren <code>property</code> in de <code>class</code> <em>Woord</em>: <em>AantalLetters</em>.</li>
+<li>Te programmeren <code>methode</code> in de <code>classe</code> <em>Woord</em>: <code>bool IsGoed(string woord)</code></li>
+<li>Te programmeren <code>classes</code>: <em>Woord</em>, <em>SpelStatus</em>, <em>Form1</em>.</li>
+<li><em>Form1</em> heeft een referentie naar 1 <em>SpelStatus</em>-object en geen referentie naar <em>Woord</em>.</li>
+<li>Te programmeren <code>properties</code> in de <code>class</code> <em>Woord</em>: <em>AantalLetters</em> (<code>read-only property</code>).</li>
+<li>Te programmeren <code>methoden</code> in de <code>class</code> <em>Woord</em>: <code>bool IsGoed(string woord)</code>.</li>
+<li>Te programmeren <code>property</code> in de <code>class</code> <em>SpelStatus</em>: <em>HetWoord</em> van het <code>type</code> <em>Woord</em> (dus NIET van het <code>type string</code>).</li>
+<li>Verder kun je in de <code>class</code> <em>SpelStatus</em> <code>methodes</code> en/of <code>properties</code> toevoegen die de status van het spel zoals het aantal geraden letters bijhouden.</li>
+</ol>
+
+<section>
+<h4>0.0.1.1. Eisen voor gevorderden:</h4>
+<ol><li>Programmeer er nog een <code>class</code> <em>Speler</em> bij en zorg ervoor dat je met twee personen het spel tegen elkaar (tegen de computer) kunt spelen.</li>
+<li><code>Class</code> <em>Speler</em> heeft een <code>property</code> van het <code>type</code> <em>SpelStatus</em> en diverse <code>methodes</code> die jij zelf bedenkt. Het form krijgt 2 <em>Speler</em>-objecten en verder geen enkel ander object.</li>
+</ol>
+<p>
+ 
+
+</p></section></section>
+</section><section>
+<h2>5.8. Challenge Auto Dagwaarde</h2>
+<a id="cha:challengeAutoDagwaarde"></a>
+<p>
+Je bent als software engineer ingehuurd om een tool te programmeren waarmee de dagwaarde van auto’s kan worden bepaald.
+</p>
+<p>
+De dagwaarde van een auto wordt berekend met deze formule:
+</p>
+<p>
+(500000/KM) * factor
+</p>
+<p>
+Hierbij is KM de kilometerstand van de auto. Factor is een waarde die afhankelijk is van het brandstoftype:
+</p><ul>
+<li>Factor = 100 indien het een benzine-auto is</li>
+<li>Factor = 150 indien het een dieselauto is.</li>
+<li>Factor = 90 indien het een LPG-auto is.</li>
+</ul>
+<p>
+De user interface bestaat minimaal uit 3 radio buttons, een textbox en een knop (button) om de berekende dagwaarde te tonen.
+</p>
+<p>
+
+<figure>
+	<img src="Chapters/challengeAutoDagWaarde/figures/autodagwaarde.png" width="60%"/>
+	<figcaption>dagwaardeberekening</figcaption>
+</figure>
+</p>
+<section>
+<h5>0.0.0.0.1. Technische randvoorwaarden</h5>
+<p>
+De volgende technische requirements zijn van toepassing:
+</p><ul>
+<li>Er dient een klasse Auto geprogrammeerd te worden met property’s KmStand en Brandstofsoort.</li>
+<li>De klasse Auto dien ook een read-only property Dagwaarde te hebben</li>
+<li>Het form maakt gebruik van deze klasse: er staat geen code die berekeningen uitvoert in het form.</li>
+</ul>
+</section>
+
+</section><section>
+<h2>5.9. Challenge BankRekening</h2>
+<a id="cha:challengeBankRekening"></a>
+
+<p>
+In deze opdracht maak je een toepassing die een sterk vereenvoudigde bank met maar twee bankrekeningen voorstelt. Hieronder zie je een voorbeeld van het scherm van de toepassing.
+</p>
+<p>
+
+<figure>
+	<img src="Chapters/challengeBankRekening/figures/BankRekening.png" width="80%"/>
+	<figcaption>bankrekening</figcaption>
+</figure>
+</p>
+
+<p>
+Met deze toepassing kan men:
+</p><ul>
+<li>Geld storten op de rekening links of rechts. In de TextBoxes vul je het bedrag in, vervolgens klik je op de Button “Storten”. Alleen een positief bedrag kan gestort worden. Indien er een negatief saldo zou ontstaan, of als er iets anders ingevuld is dan positieve getallen wordt de transactie niet uitgevoerd en wordt een foutmelding gegeven door middel van een MessageBox.</li>
+<li>Geld opnemen van de rekening links of rechts. In de TextBoxes vul je het bedrag in, vervolgens klik je op de Button “Opnemen”. Indien er een negatief saldo zou ontstaan, of als er iets anders ingevuld is dan positieve getallen wordt de transactie niet uitgevoerd en wordt een foutmelding gegeven door middel van een MessageBox.</li>
+<li>Geld overboeken van links naar rechts (of van rechts naar links). In de TextBoxes links (rechts) vul je het over te maken bedrag in daarna klik je op de Button &gt;&gt;  (&lt;&lt;).  Indien er een negatief saldo zou ontstaan bij de betalende partij, of als er iets anders ingevuld is dan positieve getallen wordt de transactie niet uitgevoerd en wordt een foutmelding gegeven door middel van een MessageBox.</li>
+</ul>
+<p>
+Het weergegeven saldo wordt na iedere transactie natuurlijk netjes aangepast.
+</p>
+<section>
+<h3>0.0.1. Opdracht</h3>
+
+<section>
+<h4>0.0.1.1. STAP 1: HET FORMULIER</h4>
+<p>
+Maak een nieuw Windows Forms project aan dat je bijvoorbeeld Bankzaken noemt. Geef het automatisch aangemaakte formulier Form1 een meer betekenisvolle naam, bijvoorbeeld BankrekeningForm. Pas ook de Property Text van het formulier aan zodat er een betere naam in de titelbalk van de applicatie komt te staan.
+</p>
+</section><section>
+<h4>0.0.1.2. STAP 2: DE GUI</h4>
+<p>
+Sleep de benodigde componenten op het formulier. Het hoeft niet precies zoals in het voorbeeld staat, maar bedenk wel vooraf hoe je de vereiste functionaliteit koppelt aan de componenten. Geef de componenten een betekenisvolle naam bijvoorbeeld btnStortenLinks en txtEuroRechts.
+ 
+</p></section><section>
+<h4>0.0.1.3. STAP 3: DE KLASSE BANKREKENING</h4>
+<p>
+Voeg een nieuwe klasse toe en noem deze Bankrekening. Elke bankrekening heeft een rekeningnummer, staat op naam van een persoon en heeft een saldo. Zorg er voor dat de klasse Bankrekening-Fields heeft om de benodigde gegevens op te slaan en verder de volgende velden heeft:
+</p><figure><pre><code>// Fields
+private int rekeningnummer;
+private string naam;
+private int saldo; // het saldo in hele centen
+private static int volgendeVrijeRekeningnummer = 2001;</code></pre><figcaption></figcaption></figure>
+
+</section><section>
+<h4>0.0.1.4. Properties</h4>
+<p>
+Programmeer de volgende attributen als READ ONLY (!) property's:
+</p><ul>
+<li>Rekeningnummer (type int)</li>
+<li>Naam (type string)</li>
+<li>Saldo (type int)</li>
+</ul>
+
+<figure><pre><code>// Methods
+public void NeemOp(int bedrag)
+{
+    // bedrag in hele centen, negatieve bedragen worden genegeerd.
+    // vul zelf in
+}
+
+public void Stort(int bedrag)
+{
+    // bedrag in hele centen, negatieve bedragen worden genegeerd.
+    // vul zelf in
+}
+
+public void MaakOver(Bankrekening andereRekening, int bedrag)
+{
+    // bedrag in hele centen, negatieve bedragen worden genegeerd.
+    // vul zelf in
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Maak de implementatie van de methodes waarbij “vul zelf in” staat, zelf af.
+</p>
+</section><section>
+<h4>0.0.1.5. Static variabele</h4>
+<p>
+Merk op dat er <code>static</code> staat voor de variabele volgendeVrijeRekeningNummer en dat deze variabele op 2001 wordt geïnitialiseerd. Dat er static staat betekent dat dit een zogenaamde klassenvariabele is. Een klassenvariabele bestaat al voordat er een instantie gemaakt is van de klasse en wordt bij het opstarten van de applicatie geïnitialiseerd en dus niet pas bij het instantiëren (aanmaken) van het object van die klasse, zoals normale variabelen. Het voordeel van een klassevariabele is dat deze voor alle instanties van deze klasse dezelfde waarde heeft. Dezelfde klassevariabele wordt dus door alle instanties van deze klasse gebruikt.
+</p>
+<p>
+Elke nieuwe bankrekening moet natuurlijk een uniek rekeningnummer hebben. Bij deze bank zijn dat de nummers vanaf 2001. De eerste bankrekening, die gecreëerd wordt, krijgt rekeningnummer 2001, de volgende rekeningnummer 2002, etc. Het bepalen van het volgende vrije rekeningnummer gebeurt in de Constructor.
+</p>
+</section><section>
+<h4>0.0.1.6. Constructors</h4>
+<p>
+Een Constructor is een speciale methode met dezelfde naam als de klasse die wordt uitgevoerd als een object van die aangemaakt wordt en dient om de Fields of Properties van de klasse te initialiseren. We hebben twee Constructors nodig. Een om een Bankrekening aan te maken als de naam van de rekeninghouder bekend is en het beginsaldo 0 en een voor het geval dat er wel sprake is van een beginsaldo, bijvoorbeeld als onderdeel van een wervingsactie van de bank.
+</p>
+<figure><pre><code>// Constructors
+public Bankrekening(string naam)
+{
+    this.naam = naam;
+    saldo = 0;
+    rekeningnummer = volgendeVrijeRekeningnummer;
+
+    // we hogen het volgende vrije rekeningnummer met 1 op zodat de
+    // volgende bankrekening een nummer krijgt dat 1 hoger is dan
+    // deze bankrekening.
+    volgendeVrijeRekeningnummer++;
+}
+
+public Bankrekening(string naam, int saldo)
+{
+    // vul zelf in
+}</code></pre><figcaption></figcaption></figure>
+
+
+<p class="note">Het is in veel C# teams gebruikelijk om de Contructors na de Properties en voor de Methoden te zetten.</p>
+</section><section>
+<h4>0.0.1.7. STAP 4: DE KLASSE BANKREKENINGFORM</h4>
+<p>
+Declareer binnen de BankrekeningForm twee Fields, voor de 2 bankrekeningen. Initialiseer deze twee Fields vervolgens in de Constructor van het formulier.
+</p>
+<figure><pre><code>public partial class BankrekeningForm : Form
+{
+    // Fields
+    private Bankrekening bankrekeningLinks;
+    private Bankrekening bankrekeningRechts;
+
+    // Constructor
+    public BankrekeningForm()
+    {
+        InitializeComponent();
+        bankrekeningLinks = new Bankrekening(&quot;Duck, Dagobert&quot;);
+        bankrekeningRechts = new Bankrekening(&quot;Gans, Gijs&quot;);
+    }</code></pre><figcaption></figcaption></figure>
+
+<p>
+Maak nu de EventHandlers voor de knoppen aan. Weet je het nog? Door dubbel te klikken op de Button in het ontwerpscherm, wordt de standaard EventHandler (Click) automatisch aangemaakt. Vul de EventHandlers voor alle Buttons nu in om de gevraagde functionaliteit en de foutafhandeling te realiseren. Gebruik daarbij de methoden van de klasse Bankrekening die je al gemaakt hebt. Controleer op geldige invoer en vergeet ook niet de Labels met saldoinformatie bij te werken. Je kunt hiervoor de methode ToString gebruiken, waarbij je opgeeft dat je het saldo als valuta wilt.
+</p>
+<p class="note">Als je wilt dat een numerieke waarde als valuta weergeven wordt dan kun je daarvoor de methode <code>ToString()</code> gebruiken. Je geeft dan als parameter een hoofdletter C mee om aan te duiden dat het currency (valuta) is:</p><figure><pre><code>double saldo = 120.55;
+lblSaldo.Text = saldo.ToString(“C”);</code></pre><figcaption></figcaption></figure>
+
+
+<p>
+ 
+Test als je klaar bent of alle functies en de foutafhandeling goed werken. Gebruik hiervoor ook de lijst van gewenste functionaliteit op de eerste pagina’s van deze opdracht.
+</p>
+</section><section>
+<h4>0.0.1.8. TryParse</h4>
+<p>
+Als je wilt controleren of een ingetypte tekst een geheel getal is, kun je gebruik maken van onderstaande methode.
+</p>
+<figure><pre><code>bool int.TryParse(string text, out int result);</code></pre><figcaption></figcaption></figure>
+
+<p>
+Zoals je ziet is bij de declaratie van de tweede parameter out vermeld. Dit betekent dat deze methode de waarde van result mag aanpassen. Bij het aanroepen van de methode moet ook out vermeld worden. De waarde van de parameter result kan na het aanroepen van TryParse veranderd zijn. Als true wordt teruggegeven, bevat tekst een heel getal en heeft result de waarde. Zo niet, dan is er iets anders ingegeven dan een geheel getal en bevat result geen geldige waarde. Let op: een negatief geheel getal is ook een geheel getal.
+</p>
+<figure><pre><code>if (int.TryParse(txtEuroLinks.Text, out getal))
+{
+    // de invoer in txtEuroLinks is een geheel getal en
+    // de waarde zit nu in de variabele ‘getal’.
+}</code></pre><figcaption></figcaption></figure>
+
+<p>
+Zie MSDN voor meer informatie.
+</p>
+</section></section><section>
+<h3>0.0.2. Uitbreidingen</h3>
+<p>
+
+<figure>
+	<img src="Chapters/challengeBankRekening/figures/niveau3.png" width="20%"/>
+	<figcaption>niveau</figcaption>
+</figure>
+</p>
+
+
+<p>
+Voeg een ListBox op het scherm waarin de transacties worden weergegeven onder vermelding van datum, tijd, betrokken rekeningnummer(s) en bedrag. Naar keuze geef je alleen geslaagde of zowel geslaagde als niet geslaagde transacties weer. In het laatste geval wordt er tevens vermeld of de transactie geslaagd is of niet.
+
+</p></section>
+</section><section>
+<h2>5.10. Challenge Woordenzoeker</h2>
+<a id="cha:challengeWoordenZoeker"></a>
+<p>
+<a id="woordenzoeker"></a>
+<figure>
+	<img src="Chapters/challengeWoordenZoeker/figures/woordenzoeker.png" width="70%"/>
+	<figcaption>0.1. woordenzoeker</figcaption>
+</figure>
+</p>
+<p>
+Op basis van een set woorden (uit een tekstbestand) een woordenzoeker puzzel van een opgegeven breedte x hoogte genereren. Woorden worden verstopt zowel horizontaal (links-rechts al dan niet achtste voren) als verticaal (boven-beneden al dan niet achterste voren). Zorg ervoor dat de woorden binnen het speelveld blijven en niet “wrappen” naar de andere kant van het speelveld.
+</p>
+<p>
+Daarna moet de speler de woorden kunnen zoeken. Een deel van het spelersscherm bestaat uit overzicht van woorden die gezocht moeten worden en ander deel is het speelveld van letters.
+</p>
+<p>
+Speler kan woorden aanstrepen in het speelveld door letters te kiezen middels de linkerknop van de muis. Een letter die al geselecteerd is, wordt bij opnieuw aanklikken gedeselecteerd. De gekozen letters worden meteen automatisch gecontroleerd na aanklikken.
+</p>
+<p>
+Letters kunnen alleen worden geselecteerd in dezelfde richting als de vorige geselecteerde letter(s). Als de geselecteerde letters als woord worden herkend in de lijst van verstopte woorden dan wordt deze doorgestreept.
+</p>
+<p>
+Tijdens het selecteren van letters, worden oranje omcirkeld. Als de geselecteerde letters een nog te zoeken woord vormen worden de cirkels definitief groen.
+</p>
+<p>
+Letters kunnen vaker worden geselecteerd en onderdeel zijn van meerdere woorden.
+</p>
+<p>
+Laat een timer zien hoe lang de speler al aan het spelen is.
+</p>
+<p>
+Om de letters in de vakjes te plaatsen kan je <code>DrawText</code> gebruiken of een <em>Sprite Generator</em> (gebruik monospace font als <em>Consolas,Regular,72</em>) gebruiken en deze plaatjes dynamisch inladen.
+</p>
+<section>
+<h4>0.0.0.1. Leerdoelen OIS12</h4>
+
+<dl><dt>Zeker:</dt>
+<dd>Class, constructor, private/public, property, field, method, file handling, GDI graphics, enum, lijsten,</dd>
+<dt>Hoogstwaarschijnlijk/goed mogelijk:</dt>
+<dd>method/constructor overloading, UML, excepties, static, casting</dd>
+<dt>Eventueel:</dt>
+<dd>XAML</dd>
+</dl>
+
+</section><section>
+<h4>0.0.0.2. Bronnen</h4>
+
+<p>
+<a href="https://www.scirra.com/forum/sprite-font-generator-v3_t86546">Sprite Font Generator</a>
+</p>
+<p>
+<a href="https://stackoverflow.com/questions/6311545/c-sharp-write-text-on-bitmap">Write Text on a Bitmap</a>
+</p>
+</section><section>
+<h4>0.0.0.3. Bronnen benodigd bij de extra features</h4>
+
+<p>
+<a href="https://www.ambiera.com/irrklang/downloads.html">Sound Engine</a>
+</p>
+<p>
+<a href="http://csharp-station.com/Tutorial/AdoDotNet">Database connectie e.d.</a>
+</p>
+<p>
+<a href="https://msdn.microsoft.com/en-us/library/system.net.webclient(v=vs.110).aspx">Webclient</a>
+</p>
+<p>
+<a href="https://docs.microsoft.com/en-us/dotnet/framework/network-programming/how-to-request-data-using-the-webrequest-class">How to: Request Data Using the WebRequest Class</a>
+</p>
+<p>
+<a href="https://stackoverflow.com/questions/4988286/what-difference-is-there-between-webclient-and-httpwebrequest-classes-in-net">What difference is there between WebClient and HTTPWebRequest classes in .NET?</a>
+</p>
+<p>
+<a href="https://www.newtonsoft.com/json">JSON Parser</a>
+</p>
+
+</section><section>
+<h4>0.0.0.4. Variatie / extra features:</h4>
+
+<dl><dt>Niveau - </dt>
+<dd>Feature</dd>
+<dt>* -</dt>
+<dd>sla de highscores (is verstreken speeltijd) en de naam van de speler op in een bestand.</dd>
+<dt>* -</dt>
+<dd>Variatie toevoegen, via een menuoptie, om getallen te zoeken i.p.v. woorden.</dd>
+<dt>* -</dt>
+<dd>moeilijkheid van de te genereren puzzel is in te stellen via een start menu o.i.d., bijv. door woorden vaker achterste voren in de puzzel te zetten, diagonaal te plaatsen.</dd>
+<dt>* -</dt>
+<dd>Als alle woorden gevonden zijn dient de speler de overgebleven letters in de juiste volgorde te zetten om zo een woord of correcte zin te vormen.</dd>
+<dt>* -</dt>
+<dd>categoriseer de woorden in thema’s, zodat verstopte woorden allemaal met elkaar te maken hebben bijv. categorie/thema Planten, Films o.i.d.</dd>
+<dt>* -</dt>
+<dd>De woorden, die in de te genereren puzzel worden verstopt, uit een database halen i.p.v. een bestand. Maak eerst een eenvoudig database model en ontwerp.</dd>
+<dt>* -</dt>
+<dd>Voeg leuke soundeffects toe bij bepaalde events zoals correct woord, incorrect woord, letter selecteren, puzzel af e.d.</dd>
+<dt>* -</dt>
+<dd>Als op escape wordt gedrukt, worden de eventuele geselecteerde letters gedeselecteerd.</dd>
+<dt>* -</dt>
+<dd>2e letter selectie manier inbouwen: letters kunnen ook worden geselecteerd door de linkerknop in te houden en te slepen. Alle letters worden geselecteerd tussen beginletter en muispositie. Bij loslaten wordt het woord, dat gevormd wordt door de selecteerde letters, gecontroleerd. Is het fout/nog niet goed dan kan in dezelfde richting opnieuw worden geselecteerd (door de normale manier of deze nieuwe manier), de vorige geselecteerde letters blijven dus actief (oranje).</dd>
+<dt>* -</dt>
+<dd>Als je letters selecteert door deze aan te klikken en je kiest de volgende letter niet in dezelfde richting en/of de letter is niet aangesloten met 1 van de zojuist eerdere geselecteerde letters dan worden al deze geselecteerde letters gedeselecteerd.</dd>
+<dt>** -</dt>
+<dd>sla de highscores op op een centrale plek (file of database). Maak hiervoor een eenvoudige webservice.</dd>
+<dt>** -</dt>
+<dd>spelers willen graag hun highscores op een eerlijke manier met elkaar vergelijken, dus zorg ervoor dat de puzzels op exact dezelfde manier aan de verschillende spelers wordt gepresenteerd, dus alle letters in een puzzel en verstopte woorden staan op exact dezelfde plek. Toon de highscores per puzzel. Geef hiervoor elke puzzel een unieke naam of id. Toon dit in een selectiemenu zodat je een bepaalde puzzel kan inladen.</dd>
+<dt>*** -</dt>
+<dd>Als snel blijkt de highscore webservice (zie ** uitbreiding) te zijn gehacked door script kiddies die de url hebben weten te achterhalen. Verzin een manier om de webservice te beveiligen, zodat er niet onrealistische of onterechte highscores kunnen worden verstuurd naar de webservice.</dd>
+</dl>
+</section>
+</section><section>
+<h2>5.11. Object Oriented Invul-Oefening</h2>
+<p>
+Vul de volgende woorden op de juiste plaats in: klasse, instantie, methode, operatie, object, attribuut. Let op: een woord kan meerdere malen in de tekst voorkomen, en soms vul je de meervoudsvorm van deze woorden in.
+</p>
+<p>
+Een programmeur moet van zijn baas binnen een game de .......... &quot;Karakter&quot; gaan programmeren. &quot;Karakter&quot; is reeds gespecificeerd door middel van een kaartje waar alle verantwoordelijkheden op staan.
+Ook krijgt hij een klassendiagram met een duidelijk overzicht van de .......... waaronder MoveForward en ValDoodNeer) en .......... (zoals bijvoorbeeld AantalLevens, HaarKleur en AantalWapens).
+</p>
+<p>
+De programmeur neemt het kaartje en opent het bestaande project in Visual Studio. Daar gaat hij dan de nieuwe .......... in programmeren.
+Als eerste programmeert hij velden voor AantalLevens en HaarKleur en vervolgens mapt hij de .......... MoveForward en ValDoorNeer naar C#-...........
+</p>
+<p>
+Als hij de .......... helemaal heeft geprogrammeerd gaat hij deze testen door er met de new-operator een .......... van aan te maken. Hij roept de .......... MoveForward aan om te testen of het karakter de goede kant op beweegt.
+Ja, het werkt! Hij maakt nog een .......... van &quot;Karakter&quot; aan om te testen of het programma dan nog steeds werkt. Ja! Met een voldaan gevoel gaat de programmeur aan het eind van de dag naar huis.
+
+</p>
+
+
+</section><section>
+<h2>5.12. Challenge Invaders</h2>
+<p class="todo">Dit hoofdstuk is Under Construction (houd de canvasversie er ook bij)</p><section>
+<h3>0.0.1. Inleiding</h3>
+<p>
+In deze opdracht gaan we een game programmeren dat “Invaders!!” heet. In dit spel ben je de verdediger van de aarde, en je beschermt onze aarde tegen de binnenvallende wezens. Je dient te voorkomen dat de wezens op de aarde landen en een stad vernietigen, door ze met de muis aan te klikken.
+</p>
+<p>
+Als je op een wezen schiet door het aan te klikken raakt het een leven kwijt en gaat het weer naar boven in het scherm om opnieuw te proberen op de aarde te gaan landen. Wezens die de onderkant van het scherm bereiken tellen als “geland” en vernietigen een stad. Als alle wezens al hun levens kwijt zijn wint de speler, als echter alle steden vernietigd worden winnen de wezens.
+</p>
+</section><section>
+<h3>0.0.2. Opdracht</h3>
+<p>
+Programmeer het spel Invaders!! waarbij je programma aan de volgende eisen moet voldoen:
+</p><ol><li>.	Je programma bevat een klasse Invader met private velden Positie en Levens. Positie is de y-coördinaat van de invader op het scherm en Levens is een getal dat begint op 5 (elke keer dat de gebruiker met de muis op een invader klikt wordt het veld Levens met één verlaagd).</li>
+<li>.	De constructor zet de beginwaarde van Levens op 5.</li>
+<li>.	Invaders kunnen bewegen (van boven naar beneden), dood gaan (als ze geen levens meer hebben) en ze moeten de mogelijkheid hebben om hun leven te verlagen (als je er op klikt). Programmeer dat netjes met methoden in de klasse Invader (en roep die methoden dan vanuit je form aan.</li>
+<li>.	Maak in je form een array (array's worden behandeld bij FUN12 en pas je hier toe) van 6 Invader-objecten aan en gebruik die om in het form verder het spel af te programmeren.</li>
+</ol>
+</section>
+
+</section><section>
+<h2>5.13. Challenge Galgje</h2>
+
+<p>
+Galgje
+Maak het spel galgje waarbij je als gebruiker tegen de computer een woord moet raden. Technische en functionele eisen:
+</p><ol><li>Programmeer de klasse Woord die het te raden woord bevat. Programmeer bijvoorbeeld een conctructor Woord(string w).</li>
+<li>Lees het te raden woord in uit een tekstbestand en maak vervolgens in C# een Woord-object aan.</li>
+<li>Programmeer de klasse Galgje die onder meer een veld van het type Woord heeft.</li>
+<li>Zorg ervoor dat het form alleen een dataveld van het type Galgje heeft, het form heeft GEEN dataveld van het type Woord.</li>
+</ol>
+
+<p>
+
+<figure>
+	<img src="Chapters/challengeGalgje/figures/Galgje.png" width="50%"/>
+	<figcaption>galgje</figcaption>
+</figure>
+
+</p>
+
+
+
+</section><section>
+<h2>5.14. Challenge Dino Game</h2>
+<a id="cha:challengeDinoGame"></a>
+<section>
+<h3>0.0.1. Voorkomende leerdoelen</h3>
+
+<p>
+<strong>file handling</strong>,
+<strong>exception</strong>,
+<strong>private/public</strong>,
+<strong>casting</strong>,
+<strong>list en foreach</strong>,
+<strong>UI separation</strong>.
+</p>
+<p>
+Zie Chapter 
+<a href="#cha:ois12learninggoals"></a> 
+voor meer informatie over deze leerdoelen.
+</p>
+</section><section>
+<h3>0.0.2. Vereiste voorkennis</h3>
+<p>
+OIS11. 
+</p></section><section>
+<h3>0.0.1. De opdracht – Dino-spel</h3>
+
+<p>
+Maak een spel maken waarbij 2 dinos over het veld kunnen bewegen, één dino is groen, de ander is rood. De dino’s zitten ieder in hun eigen kooi.
+ Beide dino’s hebben hun eigen knop om die dino te activeren je kan de dino dan besturen door middel van de pijltjestoetsen.
+Er verschijnen muntjes op het veld, en deze moeten door één van de dino’s worden opgeraapt.  Een score wordt bijgehouden.
+</p>
+<p>
+
+<figure>
+	<img src="Chapters/challengeDinoGame/figures/dinoboard.png" width="100%"/>
+	<figcaption>dino</figcaption>
+</figure>
+</p>
+<p>
+Eisen:
+1.	Analyse/vooronderzoek: start een onderzoek op met de hoofdvraag Hoe kan ik een applicatie goed besturen met de pijltjestoetsen. Maak een proof-of-concept waaruit blijkt dat dit werkt.
+2.	Toon ook de high score op het scherm. Sla de high score op in een tekstbestand en lees de high score weer uit bij het opstarten van het spel.
+</p>
+<p>
+ 
+
+</p></section>
+
+</section><section>
+<h2>5.15. Challenge Webshop Spierballetje</h2>
+
+<section>
+<h3>0.0.1. De opdracht</h3>
+
+<p>
+Webshop spierballetje.com verkoopt spullen voor krachttrainers en bodybuilders. Ze verkopen ondermeer halters (gewichten), kettlebells, sportkleding, schoenen en boeken over voeding en bodybuilding.
+</p>
+<p>
+Artikelen die ze verkopen zijn onder te verdelen in categorieën kleding, gewichten, boeken en diversen. Elk artikel heeft een inkoopprijs, verkoopprijs en een titel en omschrijving.
+</p>
+<p>
+Functionaliteiten zijn dat klanten kunnen bestellen (artikelen in winkelwagen kunnen plaatsen), betalen, account aan kunnen maken.
+Klanten krijgen automatisch mails over de status van de bestellingen. Ze krijgen een factuur via de mail.
+</p>
+<p>
+Medewerkers van de webshop kunnen met de software (een backend-applicatie) inkopen administreren, btw-aangiften afhandelen en lijsten van leveranciers bijhouden. Ook kunnen ze artikelen op de site updaten.
+</p>
+<p>
+Bezoekers van de site kunnen reviews plaatsen voor artikelen. Klanten kunnen vragen stellen via de online chatbox in de webshop.
+Bezoekers van de webshop kunnen artikelen zoeken op naam, prijs, titel enz. Ze kunnen artikelen sorteren op prijs of op meestverkocht.
+</p>
+<p>
+Klanten kunnen zich inschrijven voor een nieuwsbrief.
+</p>
+<p>
+Aan jouw de taak om als software engineer vanuit bovenstaande specificatie de te programmeren klassen te ontwerpen.
+Hint: minimaal zijn er al gauw minimaal 5 tot 20 a 25 klassen te bedenken.
+
+</p></section>
+</section><section>
+<h2>5.16. Challenge Vier op een rij</h2>
+<a id="cha:challengeVieropeenrij"></a>
+<p>
+<section>
+<h3>0.0.1. Voorkomende leerdoelen</h3>
+
+<p>
+<strong>file handling</strong>,
+<strong>exception</strong>,
+<strong>private/public</strong>,
+<strong>casting</strong>,
+<strong>list en foreach</strong>,
+<strong>UI separation</strong>.
+</p>
+<p>
+Zie Chapter 
+<a href="#cha:ois12learninggoals"></a> 
+voor meer informatie over deze leerdoelen.
+</p>
+</section><section>
+<h3>0.0.2. Vereiste voorkennis</h3>
+<p>
+OIS11. 
+</p></section>
+ 
+ 
+</p><section>
+<h3>0.0.1. Vier op een rij</h3>
+<p>
+Maak het spel 4 op een rij waarbij je tegen de computer kunt spelen, maar houdt wel rekening met onderstaande eisen:
+1.	Programmeer klasse Zet met twee integer property’s Rij en Kolom (het property  Rij is read-only, deze wordt uitgerekend omdat de stenen naar beneden vallen). De constructor accepteert een referentie naar klasse Spel (zie hieronder) en een integer-kolom.
+</p>
+<p>
+2.	Een enum Veld met mogelijke waarden Rood en Geel.
+</p><figure><pre><code>enum Veld {Rood,Geel}</code></pre><figcaption></figcaption></figure>
+
+<p>
+3.	Klasse Spel met intern een private array van 6 bij 7 (tweedimensionaal array)
+</p><figure><pre><code>Veld[] bord:
+bord = new Veld[6,7];</code></pre><figcaption></figcaption></figure>
+
+<p>
+4.	Het is een console-applicatie (dus geen Forms gebruiken). Het speelbord hoeft niet te worden afgedrukt. Mag wel, maar dan met <code>Console.WriteLine</code>s (loop dan door het arraay heen en druk het stap voor stap af)
+</p>
+<p>
+5.	De klasse Spel heeft methoden als <code>BedenkEenZet()</code> om de beste zet voor de computer te bedenken en <code>AccepteerEenZet(Zet z)</code> (om een zet van de gebruiker te accepteren).
+</p>
+
+<p class="note"></p><p>
+De methode <code>BedenkEenZet()</code> kan in eerste instantie op zoek gaan naar de eerste de beste vrije kolom. Indien er geen vrije kolom meer is dan kan de methode <code>GelijkSpel()</code> worden aangeroepen die het spel stopt.
+Maak private hulpmethoden zoals bool <code>HeeftSpelerGewonnen()</code> en <code>bool HeeftComputerGewonnen()</code> die je zelf aanroept.
+</p>
+<figure><pre><code>private Random Randje;
+
+public Zet BedenkEenZet()
+{
+   return new Zet(Randje.Next(7));
+}</code></pre><figcaption></figcaption></figure>
+</section>
+
+</section><section>
+<h2>5.17. Challenge Platenmaatschappij</h2>
+<p>
+Platenmaatschappij D'n Gulden Schijf wil een applicatie ontwikkelen om hun contactpersonen in een database bij te houden.
+</p>
+<p>
+De contactpersonen van de maatschappij bestaan uit artiesten, bands, managers en ook uit leveranciers die bijvoorbeeld kantoorartikelen en grondstoffen voor het bedrijf leveren.
+Van elke artiest of band moet naast de gebruikelijke naam-en-adres-gegevens ook worden bijgehouden welke platen (songs) ze hebben uitgebracht. Elke song bestaat uit een titel, het jaar van uitgave en een tijdsduur (in minuten + seconden). Als je in het systeem door songs bladert dan kun je elke song aanklikken om af te spelen. Hij speelt dan een hoge kwaliteit-MP3 af van die song.
+</p>
+<p>
+Zoekfunctie: binnen het systeem moet kunnen worden gezocht op naam van band, manager, leverancier of naam van artiest.
+Bij de gegevens van de managers moet worden bijgehouden wat hun uurtarief (in euro) is.
+</p>
+<p>
+Als een contactpersoon een leverancier is dan staat er naast de naam+adresgegevens ook bij wat de gemiddelde levertijd (tijd in dagen) is van de producten van die leverancier.
+Bij een band moet ook nog worden opgeslagen of er een speciaal instrument bij zit (ja/nee-veld). Speciale instrumenten zijn alle instrumenten die niet gelijk zijn aan drums, keyboard, basgitaar en gitaar. Voorbeelden van speciale instrumenten zijn bijvoorbeeld een dwarsfluit, harp, enz.
+</p>
+<p>
+Het systeem moet worden beveiligd middels een user+wachtwoord-systeem. Users (gebruikers) kunnen zich aanmelden met een gebruikersnaam en wachtwoord waarna ze toegang hebben tot alle gegevens in het systeem.
+</p>
+<p>
+
+<figure>
+	<img src="Chapters/challengePlatenMaatschappij/figures/platenmaatschappij.png" width="100%"/>
+	<figcaption>platenmaatschappij</figcaption>
+</figure>
+
+</p>
+
+</section><section>
+<h2>5.18. External Challenges</h2>
+<a id="cha:challengeExternal"></a>
+
+<p>
+Op internet zijn veel sites te vinden met uitdagend oefenmateriaal op programmeergebied.
+</p>
+<p>
+Kijk bijvoorbeeld naar
+<a href="https://www.codingame.com/home">codingame.com</a>:
+Een platform waarbij je allerlei opdrachten in C# kunt maken gesorteerd op moeilijkheidsgraad en onderwerp!
+</p>
+<p>
+Een ander voorbeeld:
+<a href="http://codegolf.stackexchange.com/">codegolf.stackexchange.com</a>
+</p>
+<p>
+Een site waar allerlei (vaak wiskundige) programmeeruitdagingen op staan is
+<a href="https://projecteuler.net/">projecteuler.net</a>
+Door softwaredocenten is Euler-project 54 (genaamd <em>poker hands</em>) al genoemd
+als een voorbeeld van een leuke uitdaging.
+
+</p>
+</section><section>
+<h2>5.19. Create your own Challenge</h2>
+<a id="cha:challengeCreateyourown"></a>
+
+<p>
+Een hele goeie manier om te leren en te kijken of je een onderwerp helemaal snapt is het zelf bedenken van een opdracht. Je helpt ook je medestudenten als je zelf lesmateriaal ontwikkelt voor een nieuwe OIS12-opdracht. Schrijf zelf je eigen opdracht en lever deze in bij de docent. Dan adopteren we jouw idee en leeft jouw eigen opdracht-idee verder als officieel lesmateriaal.
+
+</p>
+</section><section>
+<h2>5.20. Challenge Uitbreiding BankRekening (UWP)</h2>
+<a id="cha:challengeBankrekeningUwp"></a>
+
+<figure><pre><code>File -&gt; New -&gt; Project -&gt; Windows Universal -&gt; Blank Universal App.</code></pre><figcaption></figcaption></figure>
+
+<p>
+Maak je bankrekening in deze <code>UWP App</code>. Kopieer en plak je Bankrekening c# <code>class</code> in je nieuwe UWP app. Dus je gebruikt je al eerder gemaakte class van die WinForms opdracht.
+</p>
+<p>
+Als je de bankrekening class &quot;goed&quot; gemaakt hebt dan zit er geen referenties in naar methodes en dingen die niet meer bestaan en hoef je alleen de <code>buttons</code> en <code>labels</code> te slepen.
+</p>
+<p>
+Je komt er achter dat niet alles een naam heeft en dingen zoals <code>MessageBox.Show</code> niet meer bestaan in <code>UWP</code>.
+
+</p>
+
+</section><section>
+<h2>5.21. Challenge Windows Phone</h2>
+<a id="cha:challengeWindowsPhone"></a>
+<section>
+<h3>0.0.1. Voorkomende leerdoelen</h3>
+
+<p>
+<strong>file handling</strong>,
+<strong>exception</strong>,
+<strong>private/public</strong>,
+<strong>casting</strong>,
+<strong>list en foreach</strong>,
+<strong>UI separation</strong>.
+</p>
+<p>
+Zie Chapter 
+<a href="#cha:ois12learninggoals"></a> 
+voor meer informatie over deze leerdoelen.
+</p>
+</section><section>
+<h3>0.0.2. Vereiste voorkennis</h3>
+<p>
+OIS11. 
+</p></section><p>
+Als je bij OIS11 nog niet hebt gewerkt aan een Windows Phone-app dan kun je dat nu mooi doen!
+Doel: het programmeren van een Windows Phone app die aan de hand van de GPS-locatie laat zien of je thuis bent of op school bent.
+Hierbij kun je stap-voor-stap te werk gaan. Let op dat je alle stappen rustig en beheerst doorloopt, je hebt geen haast. Het doel is dat je iets leert. Het einddoel is niet een werkende app (hoewel dat wel mooi zou zijn natuurlijk).
+1.	Onderzoek wat je nodig hebt voor de ontwikkeling van Windwos Phone apps (bijv. juiste versie van Windows en juiste versie van Visual Studio en ondersteunende tools om een Windows Phone emulator te kunnen draaien).
+2.	Installeer de complete ontwikkelingomgeving en test of de Windows Phone emulator werkt. Maak de emulator werkend. Tip: je kunt ook bij de ISSD een echt device (Windows telefoon of tablet) lenen natuurlijk.
+3.	Onderzoek hoe je in Windows Phone de GPS (positie) van de gebruiker uit kunt lezen en ga op zoek naar een algoritme waarmee je kunt bepalen of je dichter bij huis of bij school bent.
+4.	Programmeer de app.
+</p>
+<p>
+Uitbreiding
+1.	Breidt je werkende app uit met een Bing-maps kaart of een Google-maps kaart. Hiervoor moet je eerst onderzoeken wat je daarvoro nodig hebt, zoals een developer API-key en misschien een externe library. Laat op de kaart met een drietaal markers het volgende zien:
+a.	Een marker die de huidige GPS-positie van de telefoon aangeeft.
+b.	Een marker die de school aangeeft (Rachelsmolen 1).
+c.	Een marker die je thuislocatie aangeeft.
+
+</p>
+
+</section><section>
+<h2>5.22. Advanced Challenge Memory in Unity 3D</h2>
+<p>
+Dit is een complexere opdracht. Het is een voorbeeld van wat je zou kunnen doen als je een hoog punt wilt halen. Hierbij hoort wel dat je dingen zelf zult moeten uitzoeken.
+<p>
+In deze opdracht ga je aan de slag met Unity. Onder anderen komen er Arrays, lists en classes aan bod. Unity werkt iets anders dan je misschien gewent bent. Kijk vooral eens naar:
+</p>
+
+<p>
+<a href="http://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Instantiate</a>
+</p>
+<p>
+<a href="http://docs.unity3d.com/Manual/Coroutines.html">Coroutines</a>
+</p>
+<p>
+Unity heeft ook de volledige scripting reference ingebouwd. Als je in de editor op F1 druk open je deze. Op internet kun je ook heel er veel vinden, mede door Unity answers, waar gebruikers vragen kunnen stellen die dan door de community worden beantwoord. Op youtube staan veel verschillende tutorials gemaakt door gebruikers. Ook Unity zelf heeft veel gratis training materiaal, ook doen zij life trainingen die daarna terug te kijken zijn:
+http://unity3d.com/learn
+</p>
+<section>
+<h5>0.0.0.0.1. Het Unity project</h5>
+<p>
+Het project is gemaakt in Unity versie 5.1.3f1. Als je de nieuwste versie hebt gedownload zit je altijd goed.
+In het project vind je een volledig werkend voorbeeld. Verder vind je een map met zelf doen. Daarin zijn al een aantal dingen opgezet voor je. In de code vind je comments met alle stappen die je moet nemen. In het voorbeeld kun je zien hoe je dit zou kunnen aanpakken.
+Veel succes!
+
+</p></section>
+
+</p></section></section>
+      </section>
+    </div>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../support/html/js/bootstrap.min.js"></script>
+
+    <!-- Syntax highlighting of code blocks -->
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- Prettify annotated paragraphs-->
+    <script src="../support/html/js/annotated-paragraphs.js"></script>
+
+  </body>
+</html>

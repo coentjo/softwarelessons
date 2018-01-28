@@ -1,0 +1,18 @@
+... // code die verbinding maakt
+try {
+	// code die er van uit gaat dat de connectie werkt:
+	...
+	// als er tijdens het uitvoeren van deze code
+	// een exception optreedt springt C# meteen
+	// naar het vangnet hieronder dat bijvoorbeeld
+	// de gebruiker meldt dat de verbinding
+	// verbroken is en dat ie het bijvoorbeeld
+	// nog eens moet proberen.
+
+} catch(Exception exc)
+{
+	...
+	// code die uitgevoerd wordt wanneer er
+	// een probleem optreedt!
+
+}
