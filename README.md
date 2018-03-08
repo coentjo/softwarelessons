@@ -5,10 +5,16 @@ First about the ProgrammerSearchScheme:
 (steps you can take when searching (on the internet) for a solution to a programming problem)
 
 U - Understand
+
+
 P - Plan 
+
 E - Execute (the plan)
+
 A - Adjust or Adopt and refer to the source
+
 V - Validate
+
 L - Learn / Look back
 
 For more: see ProgrammerSearchScheme 
