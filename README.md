@@ -1,6 +1,9 @@
 # softwarelessons
 software lesmateriaal
 
+Nieuwere versies, zie GitHub repository: 
+[https://github.com/stasemsoft/softwarelessons](https://github.com/stasemsoft/softwarelessons) 
+
 
 In the first semester we at FHICT teach the fundamental  concepts of programming to
 our students. Currently we are collecting the material we created and putting it together.
